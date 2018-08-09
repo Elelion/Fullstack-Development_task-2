@@ -130,13 +130,6 @@ header {
 	flex-direction: column;	
 }
 
-.header__arrows {
-	.genBlock(@GenWidthAllBlocks, 416px, black);
-
-	.flexBoxEnabled;
-	flex-direction: column;	
-}
-
 /**/
 
 .header__standard--title {
@@ -250,6 +243,7 @@ header {
 	text-decoration: none;
 	display: block;
 	margin: 0 auto 0 auto;
+	cursor: pointer;
 
 	/*for ripple animation*/
 	position: relative;
@@ -315,6 +309,13 @@ header {
 
 /**/
 
+.header__arrows {
+	.genBlock(@GenWidthAllBlocks, 416px, black);
+
+	.flexBoxEnabled;
+	flex-direction: column;	
+}
+
 .header__arrows--title {
 	.border__blue;
 	width: 510px;
@@ -327,11 +328,58 @@ header {
 	letter-spacing: 4.4px;
 }
 
-.header__arrows--arrowsBlock {
+.header__arrows--block {
 	.border__blue;
 	width: 1210px;
 	height: 190px; 
-	margin: 50px auto 0 auto;
+	margin: 50px auto 0 auto;	
+	.flexBoxEnabled;
+	justify-content: center;
+}
+
+.arrows__mini--block {
+	.border__green;
+	width: 403px;
+	height: 190px;
+}
+
+.arrow__btn {
+	.border__red ;
+	border-radius: 50%;
+	display: inline-block;
+    width: 138px;
+    height: 138px;
+    margin: 0 5px;
+    vertical-align: bottom;
+    background: url("../images/sprites.png") no-repeat;
+    float: left;
+    cursor: pointer;
+}
+
+.arrow__btn--left {	
+    background-position: -296px -7px;
+    margin: 25px 32px;
+}
+
+.arrow__btn--right {	
+    background-position: -441px -7px;
+    margin: 25px 0 0 30px;    
+}
+
+.arrow__btn--left:hover {
+    background-position: -7px -8px;
+}
+
+.arrow__btn--right:hover {	
+    background-position: -153px -8px;    
+}
+
+.arrow__btn--left:active {
+    background-position: -585px -7px;
+}
+
+.arrow__btn--right:active {	
+    background-position: -731px -7px;    
 }
 
 /* ___Main Content___ */
