@@ -87,14 +87,21 @@
 			<p class="titleFont">arrow buttons</p>
 		</div>
 
-		<div class="header__arrows--arrowsBlock">	
-			arrows...
+		<div class="header__arrows--block">	
+			<div class="arrows__mini--block">
+				<button class="arrow__btn arrow__btn--left"></button>
+				<button class="arrow__btn arrow__btn--right"></button>
+			</div>
 
-			<!-- 
-			<form action="">
-				<button class="small-button animate green ripple">Button<span></span></button>
-			</form> 
-			-->
+			<div class="arrows__mini--block">
+				<button class="arrow__btn arrow__btn--left"></button>
+				<button class="arrow__btn arrow__btn--right"></button>
+			</div>
+
+			<div class="arrows__mini--block">
+				<button class="arrow__btn arrow__btn--left"></button>
+				<button class="arrow__btn arrow__btn--right"></button>
+			</div>
 		</div>
 	</div>
 </header>
