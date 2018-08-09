@@ -1,0 +1,403 @@
+/* ___Fonts___ */
+
+@font-face { 
+	font-family: "PTsans55F"; 
+	src: url(../fonts/PTC55F.ttf); 
+}
+
+@font-face { 
+	font-family: "PTsans75F";
+	src: url(../fonts/PTC75F.ttf); 
+}
+
+@font-face { 
+	font-family: "PTsans57F";
+	src: url(../fonts/PTN57F.ttf); 
+}
+
+@font-face { 
+	font-family: "PTsans77F";
+	src: url(../fonts/PTN77F.ttf); 
+}
+
+@font-face { 
+	font-family: "PTsans55SF";
+	src: url(../fonts/PTS55F.ttf); 
+}
+
+@font-face { 
+	font-family: "PTsans75SF";
+	src: url(../fonts/PTS75F.ttf); 
+}
+
+@font-face { 
+	font-family: "LatoBold";
+	src: url(../fonts/Lato/Lato-Bold.ttf); 
+}
+
+/**/
+
+.titleFont {
+	font: 50px PTsans75F;
+	padding: 0;	
+	text-transform: uppercase;
+	text-align: center;	
+}
+
+/* ___General___ */
+
+body {	
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  /*for ripple effects*/
+  --x: 0px;
+  --y: 0px;
+  --scale: 0;
+}
+
+html { 
+  overflow-x: hidden;
+}
+
+/* functions */
+.border__black {
+	border: 2px dashed black;
+}
+
+.border__blue {
+	border: 1px dotted blue;
+}
+
+.border__red {
+	border: 1px solid red;
+}
+
+.border__green {
+	border: 1px solid green;
+}
+
+.genBlock(@Width, @Height, @color) {
+	width: @Width; 	
+	height: @Height; 
+	border: 1px solid @color;
+	/*border-color: transparent;*/
+	margin: 0 auto 0 auto;
+}
+
+.flexBoxEnabled {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	-webkit-display: flex;
+	-moz-display: flex;
+	-ms-display: flex;
+	-o-display: flex;
+	display: flex;
+}
+
+/*.genBlock(@Width, @minWidth, @Height, @color) when (@color = black) {
+	...
+}*/
+
+/* general */
+@GenWidthAllBlocks: 1660px;
+@GenWidth: auto;
+
+/* header */
+@HeaderHeight: 1360px;
+
+/* main */
+@MainHeight: 4010px;
+
+/* footer */
+@FooterHeight: 3860px;
+
+/* ___Header___ */
+
+header {	
+	.border__black;
+	width: @GenWidth;
+	height: @HeaderHeight;
+}
+
+.header__standard {	
+	.genBlock(@GenWidthAllBlocks, 940px, black);
+
+	.flexBoxEnabled;
+	flex-direction: column;	
+}
+
+.header__arrows {
+	.genBlock(@GenWidthAllBlocks, 416px, black);
+
+	.flexBoxEnabled;
+	flex-direction: column;	
+}
+
+/**/
+
+.header__standard--title {
+	.border__blue;
+	width: 610px;
+	height: 90px; 
+	margin: 205px auto 0 auto;
+}
+
+.header__standard--title p {
+	margin: 10px 0 0 24px;
+	letter-spacing: 4.4px;
+}
+
+/**/
+
+.header__standard--buttonsBlock {
+	.border__blue;
+	width: 1340px;
+	height: 455px; 
+	margin: 130px auto 0 auto;
+
+	.flexBoxEnabled;
+	flex-direction: row;
+	align-items: center;	
+}
+
+.header__standard--row {
+	.border__green;
+	width: auto;
+	height: auto;	
+}
+
+.small {
+	height: 380px;
+	margin-top: 52px;
+}
+
+.normal {
+	height: 380px;
+	margin-top: -4px;	
+}
+
+.second {
+	margin-left: 15px;
+	margin-right: 8px;
+}
+
+.header__standard--block:first-child {	
+	margin: 2px 0 10px 0;
+}
+
+.header__standard--block {
+	.border__blue;
+	width: 370px;
+	height: 100px;
+	margin: 50px 0 50px 0;
+}
+
+.header__standard--block:last-child {	
+	margin-bottom: 8px;
+	margin-top: -4px;
+}
+
+.small__buttons:first-child {
+	margin: 0px 0 40px 0;
+}
+
+.small__buttons {
+	.border__red;
+	width: 290px;
+	height: 70px;
+	margin: 80px 0 80px 0;
+}
+
+.small__buttons:last-child {
+	margin-bottom: 40px;
+}
+
+.small-button {
+	width: 212px;
+	height: 65px;
+	padding: 0px 0 0 16px;
+	font-family: 'PTsans75F';
+	font-size: 25px;
+	letter-spacing: 4.2px;
+	padding-left: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #4EB7A8;
+	text-decoration: none;
+	display: block;
+	margin: 0 auto 0 auto;
+	cursor: pointer;
+
+	/*for ripple animation*/
+	position: relative;
+	overflow: hidden;
+}
+
+.standard-button {
+	width: 320px;
+	height: 94px;		
+	padding: 0px;
+	font-family: 'PTsans75F';
+	font-size: 30px;
+	letter-spacing: 4.2px;
+	text-transform: uppercase;
+	text-align: center;			
+	color: #4EB7A8;
+	text-decoration: none;
+	display: block;
+	margin: 0 auto 0 auto;
+
+	/*for ripple animation*/
+	position: relative;
+	overflow: hidden;
+}
+
+.green {
+	border: 2px solid #4EB7A8;
+	border-bottom: 5px solid #28A290;
+	border-radius: 8px;	
+	background: white;
+}
+
+.green:hover {
+	background-color: #4EB7A8;
+	color: white;
+}
+
+.red {
+	border: 2px solid #BF3E1F;
+	border-bottom: 5px solid #BF3E1F;
+	border-radius: 8px;	
+	background: white;
+}
+
+.red:hover {
+	background-color: #BF3E1F;
+	color: white;
+}
+
+.rightFontColor {
+	color: #BF3E1F;
+}
+
+.animate {
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.standard-button:active, .small-button:active {
+	transform: translate(0px,8px);
+  	-webkit-transform: translate(0px,8px);
+	border-bottom: 1px solid;
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transform: scale(0);
+  position: absolute;
+  opacity: 1;
+  animation: ripple 0.5s linear;
+}
+
+@keyframes ripple {
+  100% {
+   transform: scale(2);
+   opacity: 0;
+  }
+}
+
+/**/
+
+.header__arrows--title {
+	.border__blue;
+	width: 510px;
+	height: 90px; 
+	margin: 50px auto 0 auto;
+}
+
+.header__arrows--title p {
+	margin: 10px 0 0 24px;
+	letter-spacing: 4.4px;
+}
+
+.header__arrows--arrowsBlock {
+	.border__blue;
+	width: 1210px;
+	height: 190px; 
+	margin: 50px auto 0 auto;
+}
+
+/* ___Main Content___ */
+
+main {
+	.border__black;
+	width: @GenWidth;
+	height: @MainHeight;
+}
+
+.main__charts {
+	.genBlock(@GenWidthAllBlocks, 500px, black);
+}
+
+.main__sliders {
+	.genBlock(@GenWidthAllBlocks, 350px, black);
+}
+
+.main__stages {
+	.genBlock(@GenWidthAllBlocks, 340px, black);
+}
+
+.main__elements {
+	.genBlock(@GenWidthAllBlocks, 940px, black);
+}
+
+.main__blogs {
+	.genBlock(@GenWidthAllBlocks, 940px, black);
+}
+
+.main__news {
+	.genBlock(@GenWidthAllBlocks, 930px, black);
+}
+
+/* ___Footer___ */
+
+footer {
+	.border__black;
+	width: @GenWidth;
+	height: @FooterHeight;
+}
+
+.footer__location {
+	.genBlock(@GenWidthAllBlocks, 1020px, black);
+}
+
+.footer__blog {
+	.genBlock(@GenWidthAllBlocks, 1440px, black);
+}
+
+.footer__video {
+	.genBlock(@GenWidthAllBlocks, 1396px, black);
+}
+
+/* ___Responsive design___ */
+
+@media screen and (max-width: 1660px) {		
+/*header*/
+	.header__standards, .header__arrows {
+		width: auto;		
+	}
+
+/*main*/
+	
+
+/*footer*/
+	
+
+}
