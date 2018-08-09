@@ -1,0 +1,10 @@
+﻿min-width: 600px;
+max-width: 1920px;
+
+recommended-size: 1920, 1680, 1280, 1024, 800 и 320
+
+px -> rem
+
+font: PT Sans;
+
+site: responsive (not adaptivity)
