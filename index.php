@@ -20,10 +20,10 @@
 <header>
 	<div class="header__standard">
 		<div class="header__standard--title">
-			<p class="titleFont">standard buttons</p>
+			<p class="title__font">standard buttons</p>
 		</div>
 
-		<div class="header__standard--buttonsBlock">	
+		<div class="header__standard--buttons">
 			<div class="header__standard--row small">				
 				<div class="header__standard--block small__buttons">
 					<button class="small-button animate green">Button</button>
@@ -84,10 +84,10 @@
 
 	<div class="header__arrows">
 		<div class="header__arrows--title">
-			<p class="titleFont">arrow buttons</p>
+			<p class="title__font">arrow buttons</p>
 		</div>
 
-		<div class="header__arrows--block">	
+		<div class="header__arrows--buttons">
 			<div class="arrows__mini--block">
 				<button class="arrow__btn arrow__btn--left"></button>
 				<button class="arrow__btn arrow__btn--right"></button>
@@ -110,7 +110,44 @@
 
 <main>
 	<div class="main__charts">		
-		<p>MAIN: main__charts</p>		
+		<div class="main__charts--title">
+			<p class="title__font">percentages / pie chart</p>
+		</div>
+
+		<div class="main__charts-block">
+			<div class="charts__mini--block">
+				<div class="chart__block">
+					<div class="chart__text"><p>1</p></div>
+					<div class="circle__chart--single">1%</div>
+				</div>
+											
+				<div class="chart__block">
+					<div class="chart__text"><p>38</p></div>
+					<div class="circle__chart--single">38%</div>
+				</div>
+			</div>
+
+			<div class="charts__mini--block">
+				<div class="chart__block">
+					<div class="chart__text"><p>62</p></div>
+					<div class="circle__chart--single">62%</div>
+				</div>
+
+				<div class="chart__block">
+					<div class="chart__text"><p>89.1</p></div>
+					<div class="circle__chart--single">89%</div>
+				</div>
+			</div>
+
+			<div class="charts__mini--block">
+				<div class="chart__pie--container">
+                    <div id="gray" class="pie"></div>
+                    <div id="red" class="pie"></div>
+                    <div id="green" class="pie"></div>
+                    <div id="empty" class="pie"></div>
+                </div>
+			</div>
+		</div>
 	</div>
 
 	<div class="main__sliders">
@@ -154,3 +191,4 @@
 </HTML>
 
 <script src="src/ripple.js"></script>
+<script src="src/charts.js"></script>
