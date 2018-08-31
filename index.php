@@ -9,8 +9,11 @@
 	<title> Quest-1, maket-2 </title>
 
 	<!-- CSS's -->  
-	<link rel="stylesheet/less" href="css/styles.css">        	  
+	<link rel="stylesheet/less" href="css/styles.css">        	  	
+
+	<!-- LIB's -->
 	<script src="lib/less.min.js"></script>	
+	<script src="lib/jquery-3.3.1.slim.min.js"></script>
 
 	<!-- func -->
 	<?php /*require_once 'src/functions.php';*/ ?>
@@ -150,21 +153,70 @@
 		</div>
 	</div>
 
+<!-- -->
+
 	<div class="main__sliders">
-		<p>MAIN: main__sliders</p>
+		<div class="main__sliders--title">
+			<p class="title__font">sliders</p>
+		</div>
+
+		<div class="main__sliders--block">
+			<div class="sliders__mini--block">
+				<div class="slider__container">
+					<div class="range__block" id="pointerTrackBar1">
+						<p class="sliders__block--font" id="pointerValTrackBar1">0</p>
+					</div>
+
+		        	<input type="range" min="0" max="100" value="0" 
+		        		   class="slider__range" id="trackBar1">
+				</div>
+			</div>
+
+			<div class="sliders__mini--block">
+				<div class="slider__container">
+					<div class="slider__range--pos">						
+						<div class="slider__range--fill" id="sliderRangeFill"></div>
+
+				        <input type="range" min="0" max="100" value="75" step="25" 
+				        	   class="slider__range" id="trackBar2">
+			       	</div>
+			    </div> 
+			    
+				
+			 	<div class="slider__bar--value">
+			  		<div class="bar__value--step"><p class="sliders__step--font">0</p></div>
+			  		<div class="bar__value--step"><p class="sliders__step--font">25</p></div>
+			  		<div class="bar__value--step"><p class="sliders__step--font">50</p></div>
+			  		<div class="bar__value--step"><p class="sliders__step--font">75</p></div>
+			  		<div class="bar__value--step"><p class="sliders__step--font">100</p></div>
+			  	</div> 				
+			</div>
+		</div>
 	</div>
 
+<!-- -->
+
 	<div class="main__stages">
-		<p>MAIN: main__stages</p>
+		<div class="main__stages--title">
+			<p class="title__font">stages</p>
+		</div>
+
+		
 	</div>
+
+<!-- -->
 
 	<div class="main__elements">
 		<p>MAIN: main__elements</p>
 	</div>
 
+<!-- -->
+
 	<div class="main__blogs">
 		<p>MAIN: main__blogs</p>
 	</div>
+
+<!-- -->
 
 	<div class="main__news">
 		<p>MAIN: main__news</p>
@@ -190,5 +242,7 @@
 </BODY>
 </HTML>
 
-<script src="src/ripple.js"></script>
-<script src="src/charts.js"></script>
+<script src="src/ripple.js" defer></script>
+<script src="src/charts.js" defer></script>
+<script src="src/slider.js" defer></script>
+<script src="src/stages.js" defer></script>
