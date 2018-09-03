@@ -794,6 +794,7 @@ circle:nth-child(2n) {
 	background-position: -939px -54px;
 }
 
+
 /**/
 
 .main__stages {
@@ -826,13 +827,6 @@ circle:nth-child(2n) {
 	height: 100px;
 	margin-top: 45px;
 }
-
-
-
-
-
-
-
 
 /* stage range */
 .stage__range {
@@ -941,32 +935,6 @@ circle:nth-child(2n) {
     border: none;
     outline: none;    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**/
