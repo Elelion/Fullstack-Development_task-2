@@ -201,7 +201,23 @@
 			<p class="title__font">stages</p>
 		</div>
 
-		
+		<div class="main__stages--block">
+			<div class="main__stages--pos">						
+				<div class="stage__range--template" id="stageRangeTemplate">
+					<!-- creating in stages.js -->
+					<div class="stage__point stage__point--font" id="stagePoint5">5</div> 
+					<div class="stage__point stage__point--font" id="stagePoint4">4</div> 
+					<div class="stage__point stage__point--font" id="stagePoint3">3</div> 
+					<div class="stage__point stage__point--font" id="stagePoint2">2</div> 
+					<div class="stage__point stage__point--font" id="stagePoint1">1</div> 
+
+					<div class="stage__range--fill" id="stageRangeFill"></div>
+				</div>
+
+		        <input type="range" min="0" max="100" value="75" step="25" 
+		        	   class="stage__range" id="stage">
+	       	</div>
+		</div>
 	</div>
 
 <!-- -->
