@@ -45,24 +45,6 @@
 	text-align: center;	
 }
 
-.sliders__block--font {
-	font: 40px PTsans75F;	
-	text-transform: uppercase;
-	text-align: center;	
-	margin: 0;
-	padding-top: 4px;	
-	color: white;
-}
-
-.sliders__step--font {
-	font: 30px PTsans75F;	
-	text-transform: uppercase;
-	text-align: center;	
-	margin-top: -5px;
-	padding-top: 0px;	
-	color: black;
-}
-
 .chart__font {
 	font-family: 'LatoBold';
 	font-size: 110px;
@@ -74,6 +56,38 @@
 	padding: 0;
 	margin: 4px 0 0 -24px;
 }
+
+.sliders__block--font {
+	font: 40px PTsans75F;	
+	text-transform: uppercase;
+	text-align: center;	
+	margin: 0;
+	padding-top: 5px;	
+	color: #6F6F6F;
+
+	.userSelectDisabled
+}
+
+.sliders__step--font {
+	font: 30px PTsans75F;	
+	text-transform: uppercase;
+	text-align: center;	
+	margin-top: -5px;
+	padding-top: 0px;	
+	color: black;
+
+	.userSelectDisabled
+}
+
+.stage__point--font {
+	font: 40px PTsans75F;		
+	text-align: center;	
+	padding-top: 10px;
+	color: #6F6F6F;
+
+	.userSelectDisabled;
+}
+
 
 
 /* ___General___ */
@@ -139,6 +153,15 @@ html {
 /*.genBlock(@Width, @minWidth, @Height, @color) when (@color = black) {
 	...
 }*/
+
+.userSelectDisabled {
+  	-moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 /* general */
 @GenWidthAllBlocks: 1660px;
@@ -661,12 +684,7 @@ circle:nth-child(2n) {
 }
 
 .range__block p {
-  	-moz-user-select: none;
-    -o-user-select:none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  	.userSelectDisabled;
 
 	margin: 0;
 	padding-top: 4px;
@@ -792,6 +810,163 @@ circle:nth-child(2n) {
 .main__stages--title p {
 	.titleFontPos(6px, 16px, 3.8px);
 }
+
+.main__stages--block {
+	.border__blue;
+	width: 1650px;
+	height: 200px; 
+	margin: 10px auto 0 auto;	
+	.flexBoxEnabled;
+	justify-content: center;
+}
+
+.main__stages--pos {
+	.border__green;
+	width: 1800px;
+	height: 100px;
+	margin-top: 45px;
+}
+
+
+
+
+
+
+
+
+/* stage range */
+.stage__range {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    width: 1630px;
+    height: 10px;   
+    background: #E5E5E5;
+    border-radius: 10px;   
+    outline: none;  
+    margin-top: 46px;   
+}
+
+.stage__range--template {
+	background: #4EB7A8;
+	width: 0px;
+	height: 10px;
+	border-radius: 10px;
+	position: absolute;
+	margin: 45px 0 0 10px;	
+}
+
+.stage__point {	
+	width: 78px;
+	height: 68px;
+	border-radius: 50%;
+	background: #E5E5E5;
+	margin: 0px 0 0 1px;
+	position: absolute;
+	float: left;
+	cursor: pointer;
+}
+
+/* 1 */
+.stage__point:nth-child(5) {
+	margin: -32px 0 0 1px;
+}
+
+/* 2 */
+.stage__point:nth-child(4) {
+	margin: -32px 0 0 389px;
+}
+
+/* 3 */
+.stage__point:nth-child(3) {
+	margin: -32px 0 0 777px;
+}
+
+/* 4 */
+.stage__point:nth-child(2) {
+	margin: -32px 0 0 1165px;	
+}
+
+/* 5 */
+.stage__point:nth-child(1) {
+	margin: -32px 0 0 1554px;	
+}
+
+.stage__range--fill {
+	.border__red;
+	width: 10px;
+	height: 10px;
+	margin: 1px 0 0 10px;
+	border-radius: 10px;
+	background: #E75735;
+}
+
+/* stage range -> pointer */
+.stage__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    background-image: url(../images/sprites.png);
+    background-position: -1000px -42px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* for moz */
+.stage__range::-moz-range-track {
+    width: 715px;
+    height: 10px;    
+    background: #E5E5E5;
+    border-radius: 4px; 
+    outline: none;       
+}
+
+.stage__range::-moz-range-thumb {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    background-image: url(../images/sprites.png);
+    background-position: -1000px -42px;
+    cursor: pointer;
+    border: none;
+    outline: none;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**/
