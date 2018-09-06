@@ -204,7 +204,6 @@
 		<div class="main__stages--block">
 			<div class="main__stages--pos">						
 				<div class="stage__range--template" id="stageRangeTemplate">
-					<!-- creating in stages.js -->
 					<div class="stage__point stage__point--font" id="stagePoint5">5</div> 
 					<div class="stage__point stage__point--font" id="stagePoint4">4</div> 
 					<div class="stage__point stage__point--font" id="stagePoint3">3</div> 
@@ -223,13 +222,95 @@
 <!-- -->
 
 	<div class="main__elements">
-		<p>MAIN: main__elements</p>
+		<div class="main__elements--title">
+			<p class="title__font">form elements</p>
+		</div>
+
+		<div class="main__elements--block">
+			<div class="elements__feedback feedback__font">
+				<input type="text" placeholder="Your Name" id="editName" class="feedback__edit" 
+						maxlength="25" onblur="feedbackEditsCheck()">
+
+				<input type="text" placeholder="Your Email" id="editEmail" class="feedback__edit" 
+						maxlength="25" onblur="feedbackEditsCheck()">
+
+				<textarea placeholder="Your message" class="feedback__memo" 
+							id="memo" maxlength="65"></textarea>			
+
+				<div class="feedback__tip--pos">
+					<div class="feedback__tip" id="nameTip">
+						<p class="tip__font" id="nameTipLabel">error</p>
+						<div class="tip__triangle" id="nameTipTriangle"></div>
+					</div>
+				</div>
+
+				<div class="feedback__tip--pos second__tip">
+					<div class="feedback__tip" id="emailTip">
+						<p class="tip__font" id="emailTipLabel">error</p>
+						<div class="tip__triangle" id="emailTipTriangle"></div>
+					</div>
+				</div>
+
+				<div class="feedback__button">
+					<button class="standard-button animate green submit" 
+							onclick="feedbackButton()">Submit</button>
+				</div>
+			</div>
+
+			<div class="elements__toggles">
+				<div class="elements__toggles--title">
+					<p class="title__font">toggles</p>
+				</div>
+
+				<div class="toggles__block toggles__left">
+					<input class="toggle__input" type="checkbox" id="switcher1" value="0">
+		
+					<label class="toggle__label" for="switcher1">
+						<span class="toggle--font" id="labelSwitcher1">OFF</span>
+					</label>
+				</div>
+
+				<div class="toggles__block toggles__right">
+					<input class="toggle__input" type="checkbox" id="switcher2" value="1">
+		
+					<label class="toggle__label" for="switcher2">
+						<span class="toggle--font" id="labelSwitcher2">ON</span>
+					</label>
+				</div>
+			</div>
+
+			<div class="elements__tick">
+				<div class="elements__tick--title">
+					<p class="title__font">tick boxes</p>
+				</div>
+				
+				<div class="tick__block--pos">
+					<div class="tick__block">
+						<input class="tick__input" type="checkbox" id="tick1" value="1">
+
+						<label class="tick__label" id="tickLabel1" for="tick1">
+						</label>
+					</div>
+
+					<div class="tick__block">
+						<input class="tick__input" type="checkbox" id="tick2" value="0">
+
+						<label class="tick__label" id="tickLabel2" for="tick2">
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>		
 	</div>
 
 <!-- -->
 
 	<div class="main__blogs">
-		<p>MAIN: main__blogs</p>
+		<div class="blog__search">
+		</div>
+
+		<div class="blog__profile">
+		</div>
 	</div>
 
 <!-- -->
@@ -262,3 +343,6 @@
 <script src="src/charts.js" defer></script>
 <script src="src/slider.js" defer></script>
 <script src="src/stages.js" defer></script>
+<script src="src/toggle.js" defer></script>
+<script src="src/tip.js" defer></script>
+<script src="src/tick.js" defer></script>
