@@ -61,7 +61,7 @@ function eventPoint2() {
 
 function eventPoint3() {
     point1.style.backgroundColor = '#E75735';
-    point2.style.backgroundColor = '#E75735';           
+    point2.style.backgroundColor = '#E75735'; 
     point3.style.backgroundColor = '#E75735';
 
     point4.style.backgroundColor = '#E5E5E5';
@@ -80,8 +80,8 @@ function eventPoint3() {
 
 function eventPoint4() {
     point1.style.backgroundColor = '#E75735';
-    point2.style.backgroundColor = '#E75735';           
-    point3.style.backgroundColor = '#E75735';            
+    point2.style.backgroundColor = '#E75735'; 
+    point3.style.backgroundColor = '#E75735'; 
     point4.style.backgroundColor = '#E75735';
 
     point5.style.backgroundColor = '#E5E5E5';
@@ -99,9 +99,9 @@ function eventPoint4() {
 
 function eventPoint5() {
     point1.style.backgroundColor = '#E75735';
-    point2.style.backgroundColor = '#E75735';           
-    point3.style.backgroundColor = '#E75735';            
-    point4.style.backgroundColor = '#E75735';            
+    point2.style.backgroundColor = '#E75735'; 
+    point3.style.backgroundColor = '#E75735'; 
+    point4.style.backgroundColor = '#E75735'; 
     point5.style.backgroundColor = '#E75735';
     
     point2.style.color = 'white';
