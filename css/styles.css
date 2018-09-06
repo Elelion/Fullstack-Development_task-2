@@ -88,6 +88,32 @@
 	.userSelectDisabled;
 }
 
+.feedback__font input[type="text"], .feedback__font textarea {
+	font: 38px PTsans75F;
+	color: #696969;
+	letter-spacing: -2.5px;		
+	padding-left: 40px;
+}
+
+.tip__font {
+	font: 28px PTsans75F;		
+	text-align: center;		
+	color: white;
+	letter-spacing: 2.5px;
+	padding-top: 20px;
+	text-transform: uppercase;
+	.userSelectDisabled;
+}
+
+.toggle--font {
+	font: 32px PTsans75F;		
+	text-align: center;	
+	padding-top: 10px;
+	color: white;
+	letter-spacing: 4px;
+
+	.userSelectDisabled;
+}
 
 
 /* ___General___ */
@@ -678,9 +704,9 @@ circle:nth-child(2n) {
 .range__block::after {
     content: '';  
     position: relative;   
-    left: 36px; bottom: -16px; /* position */
-    border: 10px solid transparent; /* Прозрачные границы */
-    border-top: 12px solid #E75735; /* Добавляем треугольник */    
+    left: 36px; bottom: -16px; 		/* position */
+    border: 10px solid transparent; /* transparent border */
+    border-top: 12px solid #E75735; /* adding triangle */    
 }
 
 .range__block p {
@@ -942,6 +968,360 @@ circle:nth-child(2n) {
 .main__elements {
 	.genBlock(@GenWidthAllBlocks, 940px, black);
 }
+
+.main__elements--title {
+	.border__blue;
+	width: 810px;
+	height: 70px; 
+	margin: 55px auto 0 auto;
+}
+
+.main__elements--title p {
+	.titleFontPos(6px, 16px, 3.8px);
+}
+
+.main__elements--block {
+	.border__blue;
+	width: 1650px;
+	height: 680px; 
+	margin: 80px auto 0 auto;
+}
+
+.elements__feedback {
+	.border__green;
+	width: 810px;
+	height: 610px;	
+	margin: 50px 0 0 14px;
+	float: left;
+}
+
+.feedback__edit {	
+    width: 534px;
+    height: 72px;
+    margin-bottom: 35px;
+
+    background: #E5E5E5;
+    border: none;
+    border-radius: 7px;  
+
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.feedback__memo {
+    width: 734px;
+    height: 198px;
+    resize: none; /* Запрещаем изменять размер */
+
+    background: #E5E5E5;
+    border: none;
+    border-radius: 7px;    
+
+    padding: 20px;
+    font-size: 20px;
+}
+
+.feedback__tip--pos {    
+    width: 200px;
+    position: relative;
+
+    float: right;
+    margin-right: 16px;
+    top: -460px;
+}
+
+.second__tip {
+    top: -350px;
+    left: 216px;
+}
+
+.feedback__tip {
+    width: 197px;
+    height: 78px;
+    background: #E75735;        
+    border-radius: 7px;
+
+    -webkit-webkit-transition-duration: 0.7s;
+    -moz-webkit-transition-duration: 0.7s;
+    -ms-webkit-transition-duration: 0.7s;
+    -o-webkit-transition-duration: 0.7s;
+    webkit-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+
+    /* display: none; */
+}
+
+.tip__triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 12px solid #E75735;
+    border-bottom: 10px solid transparent;
+    margin-left: -12px;
+    margin-top: -28px;   
+
+    -webkit-webkit-transition-duration: 0.7s;
+    -moz-webkit-transition-duration: 0.7s;
+    -ms-webkit-transition-duration: 0.7s;
+    -o-webkit-transition-duration: 0.7s;
+    webkit-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+}
+
+/* .element__tip::after {
+    content: '';
+    margin-left: -20px;
+    position: absolute;
+
+    margin-top: -23px;
+    border: 10px solid transparent; 
+    border-right: 10px solid #4EB7A8;    
+} */
+
+.feedback__tip p {
+    margin: 0px;        
+}
+
+.feedback__button {
+	.border__blue;
+	width: 350px;
+	margin: -50px 2px 0 190px;
+	float: right;
+}
+
+.submit {
+	background: #4EB7A8;
+	color: white;
+}
+
+.submit:hover {
+	background: #0C9581;
+}
+
+.elements__toggles {
+	.border__green;
+	width: 400px;
+	height: 225px;	
+	margin: 35px 0 0 235px;
+	float: left;
+}
+
+.elements__toggles--title {
+	.border__blue;
+	width: 400px;
+	height: 60px;
+}
+
+.elements__toggles--title p {
+	margin: 0 0 0 10px;
+	padding: 0;
+	letter-spacing: 3.2px;
+}
+
+.toggles__block {
+	.border__red;
+	width: 195px;
+	height: 100px;	
+
+	margin-top: 60px;
+}
+
+.toggles__left {
+	float: left;
+}
+
+.toggles__right {
+	float: right;
+}
+
+/* toggle -> switcher -> checkbox */
+.toggle__input {    
+    display: none;    
+}
+
+/* if checked, then... */
+.toggle__input:checked + .toggle__label {
+    color: #000;
+}
+
+/* paint over the field with a circle */
+.toggle__input:checked + .toggle__label:before {
+    background-color: #4EB7A8;
+}
+
+/* move circle */
+.toggle__input:checked + .toggle__label:after {
+    transform: translateX(96px);
+}
+
+/* the average status of the slider on the reverse movement when the button is pinched */
+.toggle__input:checked + .toggle__label:active:after {
+    transform: translateX(70px);    
+}
+
+/* change the color of the field when the LMB is clamped and the slider goes back */
+.toggle__input:checked + .toggle__label:active:before {
+    background-color: #7EB5AB;
+}
+
+.toggle__label {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 50px;
+    cursor: pointer;
+
+    font-size: 14px;
+    color: #ccc;
+
+    position: relative;
+
+    transition: color .1s linear;        
+}
+
+.toggle__label span {
+	z-index: 3;
+	position: absolute;
+	padding: 35px 0 0 38px;
+}
+
+/* creating switcher */
+.toggle__label:before {
+    content: "";
+    display: block;
+    width: 162px;
+    height: 65px;
+
+    background: #E5E5E5;
+    border-radius: 50px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    transition: background-color .1s linear;
+    margin: 24px 0 0 16px;
+}
+
+/* creating circle / pointer for switcher */
+.toggle__label:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    background-color: #fff;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 2;
+
+    transition: transform .1s linear;
+    margin: 30px 0 0 23px;
+}
+
+/* when press on pointer and hold click */
+.toggle__label:active:after {
+    transform: translateX(30px);
+}
+
+/* midle pointer + hold click */
+.toggle__label:active:before {
+    background-color: #D3E2DE;
+}
+
+.elements__tick {
+	.border__green;
+	width: 400px;
+	height: 225px;	
+	margin: 85px 0 0 235px;
+	float: left;
+}
+
+.elements__tick--title {
+	.border__blue;
+	width: 400px;
+	height: 60px;
+}
+
+.elements__tick--title p {
+	margin: 0 0 0 10px;
+	padding: 0;
+	letter-spacing: 3.2px;
+}
+
+.tick__block {
+	.border__red;
+	width: 100px;
+	height: 100px;	
+
+	margin: 60px 5px 0 5px;
+}
+
+.tick__block--pos {
+	.flexBoxEnabled;
+	justify-content: center;
+}
+
+/* tick */
+.tick__input {
+	display: none;
+}
+
+.tick__input:checked {
+	color: #000;
+}
+
+.tick__input:checked + .tick__label:before {
+    background-color: #4EB7A8;
+
+    -webkit-transition: 0.7s;
+    transition: 0.7s;    
+}
+
+.tick__label {
+    display: inline-block;
+    vertical-align: top;    
+    cursor: pointer;
+    
+    position: relative;
+
+    transition: color .1s linear; 
+    text-align: center; 
+}
+
+.tick__label:before {
+    content: '\2713';
+    display: inline-block;
+    width: 63px;
+    height: 56px;
+    border-radius: 50px;
+	
+	color: #B6B6B6;
+    background: #E5E5E5;    
+    font-size: 50px;
+    line-height: 50px;    
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+    margin: 24px 0 0 8px;  
+    padding-top: 7px;
+
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.tick__input:checked + .tick__label:before { 
+	color: white;
+}
+
 
 /**/
 
