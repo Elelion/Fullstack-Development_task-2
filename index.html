@@ -517,11 +517,94 @@
 	</div>
 
 	<div class="footer__blog">
-		<p>MAIN: footer__blog</p>
-	</div>
+		<div class="footer__calendar">
+			<div class="footer__calendar--title">
+				<p class="title__font">calendar</p>
+			</div>
+
+			<div class="footer__calendar--pos">
+				<div class="calendar__title">
+					<div class="calendar__title--day" id="currentDay"></div>
+					<div class="calendar__title--month" id="currentMonth"></div>
+
+					<div class="calendar__btn btn1" onclick="back()"><p> < </p></div>
+					<div class="calendar__btn btn2" onclick="next()"><p> > </p></div>
+				</div>
+
+				<div class="calendar__table" id="calendar" onclick="select()"></div>
+				
+				<button class="calendar-button animate gray submit" onclick="current()">
+								today</button>
+			</div>
+		</div>
+
+		<div class="footer__messaging">
+			<div class="footer__messaging--title">
+				<p class="title__font">messaging</p>
+			</div>
+
+			<div class="footer__messaging--pos">
+				<div class="messaging__title">
+					<p class="messaging__title--font">Sarah Brown</p>
+
+					<div class="messaging__title--line">
+					</div>
+
+					<div class="messaging__title--photo">
+						<img src="images/Frodo.jpg" alt="" title="" />
+					</div>					
+				</div>
+
+				<div class="messaging__buttons--block">
+					<div class="messaging__btn messaging__chat--btn" id="msgChatBtn" 
+							onclick="msg()" onmouseover="overMsg()" onmouseleave="leaveMsg()">						
+					</div>
+
+					<div class="messaging__btn messaging__photo--btn">
+					</div>
+				</div>
+
+				<div class="messaging__chats--block" id="messagingChatBlock">
+				    <div class="clear"></div>
+				    <div class="messaging__chats--to">
+				      <p class="messaging__chats--font to__font--color">
+				      		You can take money with you ?
+				      	</p>
+				    </div>
+
+				    <div class="clear"></div>
+				    <div class="messaging__chats--to">
+				      <p class="messaging__chats--font to__font--color">
+				      	Yeah that sounds great. See you then.</p>
+				    </div>
+
+				    <div class="clear"></div>
+				    <div class="messaging__chats--from">
+				      	<p class="messaging__chats--font">
+				      		Hey! So are we cool to meet at the art gallery? Say 8pm
+				      	</p>
+				    </div>
+				</div>
+				
+				<div class="messaging__chats--msg" id="msgChatInput">
+					<textarea class="messaging__chats--font" id="messagingTextarea">
+					</textarea>
+				</div>
+
+				<div class="messaging__buttons--bottom">
+					<button class="standard-button animate green reply" onclick="msgAdd()">
+						<span>Reply</span></button>
+				</div>
+			</div>
+		</div>
+	</div>		
 
 	<div class="footer__video">
-		<p>MAIN: footer__video</p>
+		<div class="footer__video--title">
+			<p class="title__font">video</p>
+		</div>
+
+		
 	</div>
 </footer>
 
@@ -538,3 +621,6 @@
 <script src="src/userProfile.js" defer></script>
 <script src="src/search_drop.js" defer></script>
 <script src="src/location.js" defer></script>
+<script src="src/calendar.js" defer></script>
+<script src="src/messaging.js" defer></script>
+<script src="src/video.js" defer></script>
