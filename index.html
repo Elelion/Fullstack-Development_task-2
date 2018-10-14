@@ -604,7 +604,35 @@
 			<p class="title__font">video</p>
 		</div>
 
-		
+		<div class="footer__video--pos">
+			<div class="footer__video--frame">
+				<div class="video__poster" id="videoPoster">
+					<p class="video__poster--title">New Zealand Landscapes Timelapse</p>
+					<p class="video__poster--text">from bevan percial</p>
+					<br>
+					<p class="video__poster--link">http://vimeo.com/62980495</p>
+				</div>
+
+				<video src="video/NewZealandLandscapesTimelapse.mp4" id="video" 
+						onclick="PlayPauseVideo()" poster="images/video_poster.jpg"></video>
+			</div>
+
+			<div class="footer__video--control">
+				<input type="button" class="video__play--btn" id="playPauseVideo" 
+						onclick="PlayPauseVideo()" />
+
+				<!-- <div class="video__range--fill" id="VideoRangeFill"></div> -->
+				<input type="range" 
+						class="video__control--ratio slider__range video__slider--range" 
+						id="ratioVideo"
+						onmousedown="clearAnimateRangeVideo()" 
+						onmouseup="movedRangeVideo()" />
+
+				<div class="video__control--fullscreen">
+					<input type="button" onclick="FullScreenVideo()" />
+				</div>
+			</div>
+		</div>
 	</div>
 </footer>
 
