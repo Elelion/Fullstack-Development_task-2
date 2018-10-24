@@ -5,6 +5,7 @@ const TXT_INPUT = document.getElementById('messagingTextarea');
 const PARENT = document.getElementById('messagingChatBlock');
 const CHAT_BTN = document.getElementById('msgChatBtn');
 
+// 1 - enabled, 0 - disabled
 var msgBtnStatus = 0;
 
 function msg() {
@@ -24,17 +25,19 @@ function msg() {
 }
 
 function msgAdd() {
-	let clear = document.createElement('div');
-	clear.className = 'clear';
+	if (msgBtnStatus == 1 && TXT_INPUT.value != '') {
+		let clear = document.createElement('div');
+		clear.className = 'clear';
 
-	let div = document.createElement('div');
-	div.className = 'messaging__chats--from';
-	div.innerHTML = '<p class=messaging__chats--font to__font--color>' + TXT_INPUT.value + '</p>';
-	
-	PARENT.insertBefore(clear, PARENT.firstChild);
-	PARENT.insertBefore(div, PARENT.firstChild);
+		let div = document.createElement('div');
+		div.className = 'messaging__chats--from';
+		div.innerHTML = '<p class=messaging__chats--font to__font--color>' + TXT_INPUT.value + '</p>';
+		
+		PARENT.insertBefore(clear, PARENT.firstChild);
+		PARENT.insertBefore(div, PARENT.firstChild);
 
-	TXT_INPUT.value = '';
+		TXT_INPUT.value = '';
+	}
 }
 
 function overMsg() {

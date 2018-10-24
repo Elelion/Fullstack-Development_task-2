@@ -202,8 +202,20 @@
 		</div>
 
 		<div class="main__stages--block">
-			<div class="main__stages--pos">						
-				<div class="stage__range--template" id="stageRangeTemplate">
+			<div class="main__stages--pos">
+				<div class="stage__range--block">
+					<div class="stage__range" id="stage">						
+						<div class="stage__point stage__point--font" id="stagePoint1">1</div> 
+						<div class="stage__point stage__point--font" id="stagePoint2">2</div> 
+						<div class="stage__point stage__point--font" id="stagePoint3">3</div> 
+						<div class="stage__point stage__point--font" id="stagePoint4">4</div> 
+						<div class="stage__point stage__point--font" id="stagePoint5">5</div> 						
+					</div>
+
+					<div class="stage__range--fill" id="stageRangeFill"></div>
+				</div>
+
+				<!-- <div class="stage__range--template" id="stageRangeTemplate">
 					<div class="stage__point stage__point--font" id="stagePoint5">5</div> 
 					<div class="stage__point stage__point--font" id="stagePoint4">4</div> 
 					<div class="stage__point stage__point--font" id="stagePoint3">3</div> 
@@ -211,10 +223,10 @@
 					<div class="stage__point stage__point--font" id="stagePoint1">1</div> 
 
 					<div class="stage__range--fill" id="stageRangeFill"></div>
-				</div>
+				</div> -->
 
-		        <input type="range" min="0" max="100" value="75" step="25" 
-		        	   class="stage__range" id="stage">
+		        <!-- <input type="range" min="0" max="100" value="75" step="25" 
+		        	   class="stage__range" id="stage"> -->
 	       	</div>
 		</div>
 	</div>
@@ -228,27 +240,36 @@
 
 		<div class="main__elements--block">
 			<div class="elements__feedback feedback__font">
-				<input type="text" placeholder="Your Name" id="editName" class="feedback__edit" 
-						maxlength="25" onblur="feedbackEditsCheck()">
+				
+				<div class="feedback__edit--name">
+					<input type="text" placeholder="Your Name" id="editName" 
+	    					class="feedback__edit" maxlength="25" 
+	    					onblur="feedbackEditsCheck()">
 
-				<input type="text" placeholder="Your Email" id="editEmail" class="feedback__edit" 
-						maxlength="25" onblur="feedbackEditsCheck()">
-
-				<textarea placeholder="Your message" class="feedback__memo" 
-							id="memo" maxlength="65"></textarea>			
-
-				<div class="feedback__tip--pos">
-					<div class="feedback__tip" id="nameTip">
-						<p class="tip__font" id="nameTipLabel">error</p>
-						<div class="tip__triangle" id="nameTipTriangle"></div>
-					</div>
+	    			<div class="feedback__tip--pos">
+						<div class="feedback__tip" id="nameTip">
+							<p class="tip__font" id="nameTipLabel">error</p>
+							<div class="tip__triangle" id="nameTipTriangle"></div>
+						</div>
+					</div> 
 				</div>
 
-				<div class="feedback__tip--pos second__tip">
-					<div class="feedback__tip" id="emailTip">
-						<p class="tip__font" id="emailTipLabel">error</p>
-						<div class="tip__triangle" id="emailTipTriangle"></div>
-					</div>
+				<div class="feedback__edit--email">
+					<input type="text" placeholder="Your Email" id="editEmail" 
+							class="feedback__edit" maxlength="25" 
+							onblur="feedbackEditsCheck()">
+
+					<div class="feedback__tip--pos second__tip">
+						<div class="feedback__tip" id="emailTip">
+							<p class="tip__font" id="emailTipLabel">error</p>
+							<div class="tip__triangle" id="emailTipTriangle"></div>
+						</div>
+					</div> 
+				</div>
+
+				<div class="feedback__memo--textarea">
+					<textarea placeholder="Your message" class="feedback__memo" 
+								id="memo" maxlength="65"></textarea>
 				</div>
 
 				<div class="feedback__button">
@@ -544,8 +565,10 @@
 			</div>
 
 			<div class="footer__messaging--pos">
-				<div class="messaging__title">
-					<p class="messaging__title--font">Sarah Brown</p>
+				<div class="messaging__title--pos">
+					<div class="messaging__title">
+						<p class="messaging__title--font">Sarah Brown</p>
+					</div>
 
 					<div class="messaging__title--line">
 					</div>
@@ -621,9 +644,8 @@
 				<input type="button" class="video__play--btn" id="playPauseVideo" 
 						onclick="PlayPauseVideo()" />
 
-				<!-- <div class="video__range--fill" id="VideoRangeFill"></div> -->
 				<input type="range" 
-						class="video__control--ratio slider__range video__slider--range" 
+						class="video__control--ratio video__slider--range" 
 						id="ratioVideo"
 						onmousedown="clearAnimateRangeVideo()" 
 						onmouseup="movedRangeVideo()" />
@@ -633,11 +655,15 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>    
+
 </footer>
 
 </BODY>
 </HTML>
+
+
+<script src="src/variables.js" defer></script>
 
 <script src="src/ripple.js" defer></script>
 <script src="src/charts.js" defer></script>

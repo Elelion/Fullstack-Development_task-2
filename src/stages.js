@@ -16,9 +16,6 @@ const point5 = document.getElementById('stagePoint5');
 // func for filling point
 
 var pos = 0;
-var sum = 0;
-
-pos = stage.value;
 
 function eventPoint1() {
     point1.style.backgroundColor = '#E75735';
@@ -33,10 +30,9 @@ function eventPoint1() {
     point3.style.color = '#6F6F6F';
     point4.style.color = '#6F6F6F';
     point5.style.color = '#6F6F6F';
-
-    sum = pos * 1 + 0;
-    stageFill.style.width = sum + 'px';
-
+    
+    pos = 0;
+    stageFill.style.width = 0 + '%';    
     console.log('function eventPoint1()  / 0');
 }
 
@@ -53,9 +49,8 @@ function eventPoint2() {
     point4.style.color = '#6F6F6F';
     point5.style.color = '#6F6F6F';
 
-    sum = pos * 1 + 380;
-    stageFill.style.width = sum + 'px';
-
+    pos = 25;
+    stageFill.style.width = pos + '%';
     console.log('function eventPoint2() / 25');
 }
 
@@ -72,9 +67,10 @@ function eventPoint3() {
     point4.style.color = '#6F6F6F';
     point5.style.color = '#6F6F6F';
 
-    sum = pos * 1 + 780;
-    stageFill.style.width = sum + 'px';
+    pos = 50;
+    if (browserWidth < 601) pos = 46;
 
+    stageFill.style.width = pos + '%';
     console.log('function eventPoint3() / 50');
 }
 
@@ -91,9 +87,10 @@ function eventPoint4() {
     point4.style.color = 'white';
     point5.style.color = '#6F6F6F';
 
-    sum = pos * 1 + 1200;
-    stageFill.style.width = sum + 'px';
+    pos = 71;
+    if (browserWidth < 601) pos = 66;
 
+    stageFill.style.width = pos + '%';
     console.log('function eventPoint4() / 75');
 }
 
@@ -109,9 +106,10 @@ function eventPoint5() {
     point4.style.color = 'white';
     point5.style.color = 'white';
 
-    sum = pos * 1 + 1550;
-    stageFill.style.width = sum + 'px';
+    pos = 93;
+    if (browserWidth < 601) pos = 87;
 
+    stageFill.style.width = pos + '%';
     console.log('function eventPoint5() / 100');
 }
 

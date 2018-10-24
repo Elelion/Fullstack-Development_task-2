@@ -23,7 +23,10 @@ function PlayPauseVideo() {
 		video.pause();
 		clearInterval(startDuration);
 		playPause.style.backgroundPosition = '2px -246px';
-		posterText.style.display = 'block';
+
+		if (browserWidth >= 450) {
+			posterText.style.display = 'block';
+		}
 	}	
 }
 
