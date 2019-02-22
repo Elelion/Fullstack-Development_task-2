@@ -1,0 +1,78 @@
+mixin standard-buttons(parameter)
+	-var parameter = parameter || {};
+	-var titleEnabled = parameter.titleEnabled || 'true';
+	-var title = parameter.title || 'standard buttons';
+	-var quantity = parameter.quantity || 3;
+
+	if ((quantity > 3) || (quantity < 1))
+		-quantity = 3;
+
+	//-
+
+	mixin standard-buttons__item(settings)
+		-var settings = settings || {};
+		-var sizeBlock = settings.sizeBlock || 'small';
+		-var sizeButton = settings.sizeButton || 'small';
+		-var colorButton = settings.colorButton || 'green';
+		-var quantityButton = settings.quantityButton || 3;
+
+		.standard-buttons__item
+			- for (var i = 0; i < quantityButton; i++)
+				case sizeBlock
+					when 'small'
+						.standard-buttons__small-block
+							+button-standard({size: sizeButton, color: colorButton})
+					when 'standard'
+						.standard-buttons__normal-block
+							+button-standard({size: sizeButton, color: colorButton})
+
+	//-
+
+	mixin standard-buttons__list
+		+standard-buttons__item({
+			quantityButton: quantity})
+
+		+standard-buttons__item({
+			quantityButton: quantity,
+			sizeBlock: 'standard',
+			sizeButton: 'standard'})
+
+		+standard-buttons__item({
+			quantityButton: quantity,
+			sizeBlock: 'standard',
+			sizeButton: 'standard',
+			colorButton: 'red'})
+
+		+standard-buttons__item({
+			quantityButton: quantity,
+			sizeBlock: 'small',
+			sizeButton: 'small',
+			colorButton: 'red'})
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.standard-buttons
+				.standard-buttons__title
+					+chapter__title(title)
+				.standard-buttons__list
+					+standard-buttons__list
+		default
+			.standard-buttons__list
+				+standard-buttons__list
+
+//- NOTE: templates for mixin
+
+//- section.standard-buttons
+//-   .standard-buttons__title
+//-     +chapter__title('standard buttons')
+
+//-   .standard-buttons__list
+//-     .standard-buttons__item
+//-       .standard-buttons__normal-block
+//-         +button-standard({color: 'red'})
+//-       .standard-buttons__normal-block
+//-         +button-standard({color: 'red'})
+//-       .standard-buttons__normal-block
+//-         +button-standard({color: 'red'})

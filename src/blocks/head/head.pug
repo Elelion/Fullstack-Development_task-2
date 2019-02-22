@@ -1,0 +1,43 @@
+mixin headList
+	-var patch = 'src/blocks/templates/';
+
+	//- 
+
+	doctype html
+	html(lang='ru-RU')
+		head
+			//- NOTE: SEO
+			meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+			meta(name='Keywords', content='Full Stack Development, FSD, quest-2')
+			meta(name='description', content='Best company on the world for Web dev')
+			meta(name='viewport', content='width=device-width, initial-scale=1.0, \
+				maximum-scale=1.0, user-scalable=no')
+
+			link(rel='shortcut icon', type='image/x-icon', 
+				href='src/images/favicon.png')
+				
+			title  maket-2
+
+			//- NOTE: CSS's
+			link(rel='stylesheet', href='src/styles.css')
+
+			//- NOTE: JS:
+			script(src = patch + 'button-standard/button-standard__ripple.js' defer)
+			script(src = patch + 'chart-percentage/chart-percentage.js' defer)
+			script(src = patch + 'slider/classic-slider/classic-slider.js' defer)
+			script(src = patch + 'slider/step-slider/step-slider.js' defer)
+			script(src = patch + 'stage/stage.js' defer)
+			script(src = patch + 'toggles/toggles.js' defer)
+			script(src = patch + 'feed-back/feed-back.js' defer)
+			script(src = patch + 'tick-boxes/tick-boxes.js' defer)
+			script(src = patch + 'user-profile/user-profile.js' defer)
+			script(src = patch + 'drop-down/drop-down.js' defer)
+			script(src = patch + 'map/map.js' defer)
+			script(src = patch + 'calendar/calendar.js' defer)
+			script(src = patch + 'messaging/messaging.js' defer)
+			script(src = patch + 'video-player/video-player.js' defer)
+
+			//- TODO: to link the compiled file, for webPack
+			//- script(src = 'src/scripts.js' defer)
+			
+		include ../content/content

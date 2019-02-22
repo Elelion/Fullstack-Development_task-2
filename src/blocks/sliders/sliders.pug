@@ -1,0 +1,51 @@
+mixin sliders(parameter)
+	-var parameter = parameter || {};
+	-var titleEnabled = parameter.titleEnabled || 'true';
+	-var title = parameter.title || 'sliders';
+	-var classicSliderEnabled = parameter.classicSliderEnabled || 'true';
+	-var classicSliderType = parameter.classicSliderType || 'classic';
+	-var stepSliderEnabled = parameter.stepSliderEnabled || 'true';
+
+	//-
+
+	mixin classicEnabled
+		case classicSliderEnabled
+			when 'true'
+				.sliders__item
+					+classic-slider({type: classicSliderType})
+
+	//-
+
+	mixin stepEnabled
+		case stepSliderEnabled
+			when 'true'
+				.sliders__item
+					+step-slider
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.sliders
+				.sliders__title
+					+chapter__title(title)
+				.sliders__list
+					+classicEnabled
+					+stepEnabled
+		default
+			.sliders__list
+				+classicEnabled
+				+stepEnabled
+
+//- NOTE: templates for mixin
+
+//- section.sliders
+//-   .sliders__title
+//-     +chapter__title('sliders')
+
+//-   .sliders__list
+//-     .sliders__item
+//-       +classic-slider
+
+//-     .sliders__item
+//-       +step-slider

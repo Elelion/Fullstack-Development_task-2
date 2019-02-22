@@ -1,0 +1,59 @@
+mixin percentages-pie(parameter)
+	-var parameter = parameter || {};
+	-var titleEnabled = parameter.titleEnabled || 'true';
+	-var title = parameter.title || 'percentages / pie chart';
+	-var quantity = parameter.quantity || 4;
+	-var firstChart = parameter.firstChart || 2;
+	-var secondChart = parameter.secondChart || 38;
+	-var thirdChart = parameter.thirdChart || 62;
+	-var fourthChart = parameter.fourthChart || 89;
+
+	if ((quantity > 4) || (quantity < 1))
+		-quantity = 4;
+
+	//-
+
+	mixin percentages-pie__item
+		- var arr = [firstChart, secondChart, thirdChart, fourthChart];
+
+		- for (var i = 0; i < quantity; i++)
+			.percentages-pie__item
+				+chart-percentages({value: `${arr[i]}`})
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.percentages-pie
+				.percentages-pie__title
+					+chapter__title(title)
+				.percentages-pie__list
+					+percentages-pie__item
+					.percentages-pie__item
+						+chart-pie
+		default
+			.percentages-pie__list
+				+percentages-pie__item
+				.percentages-pie__item
+					+chart-pie
+
+//- NOTE: templates for mixin
+//- section.percentages-pie
+//-   .percentages-pie__title
+//-     +chapter__title(title)
+
+//-   .percentages-pie__list
+//-     .percentages-pie__item
+//-       +chart-percentages({value: 2})
+
+//-     .percentages-pie__item
+//-       +chart-percentages({value: 38})
+
+//-     .percentages-pie__item
+//-       +chart-percentages({value: 62})
+
+//-     .percentages-pie__item
+//-       +chart-percentages({value: 89})
+
+//-     .percentages-pie__item
+//-       +chart-pie

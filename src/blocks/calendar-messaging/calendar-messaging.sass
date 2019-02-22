@@ -1,0 +1,83 @@
+.calendar-messaging
+	+border-black
+	+flex-enabled
+	flex-direction: row
+	width: auto
+	height: auto
+	margin: 0 auto 7.7rem auto
+
+	@media screen and (max-width: 1660px)
+		+flex-enabled
+		flex-direction: column
+
+	&__calendar
+		+border-blue
+		width: auto
+		height: auto
+
+		@media screen and (max-width: 1660px)
+			width: 78rem
+			margin: 0 auto 8rem auto
+
+		@media screen and (max-width: 830px)
+			width: 55.5rem
+
+		@media screen and (max-width: 560px)
+			width: auto
+
+		&-title
+			+border-blue
+			width: auto
+			height: auto
+			margin: 3.5rem 0 0 auto
+
+			// NOTE: margin, width - adjust the design for the layout
+			& > .chapter__title-font
+				margin: .1rem 0 0 -3.4rem
+				letter-spacing: .44rem
+
+		&-content
+			+border-red
+			width: auto
+			height: auto
+			margin: 5.7rem 4rem 0 1.5rem
+
+			@media screen and (max-width: 1660px)
+				margin-left: auto
+				margin-right: auto
+
+	&__messaging
+		+border-blue
+		width: auto
+		height: auto
+
+		@media screen and (max-width: 1660px)
+			width: 78rem
+			margin: 0 auto 0 auto
+
+		@media screen and (max-width: 830px)
+			width: 55.5rem
+
+		@media screen and (max-width: 560px)
+			width: 41rem
+
+		// NOTE: margin, width - adjust the design for the layout
+		&-title
+			+border-blue
+			width: auto
+			height: auto
+			margin: 3.5rem auto 0 auto
+
+			& > .chapter__title-font
+				margin: .1rem 0 0 -1rem
+				letter-spacing: .29rem
+
+		&-content
+			+border-red
+			width: auto
+			height: auto
+			margin: 5.7rem .6rem 0 2rem
+
+			@media screen and (max-width: 1660px)
+				margin-left: auto
+				margin-right: auto

@@ -1,0 +1,38 @@
+mixin events(parameter)
+	-var parameter = parameter || {};
+	-var photoPoster = parameter.photoPoster || 'events';
+	-var photoAlt = parameter.photoAlt || 'active events';
+	-var photoTitle = parameter.photoTitle || 'SEO words';
+	-var day = parameter.day || '24';
+	-var month = parameter.month || 'Aug';
+
+	-
+		var description = parameter.description || `
+		Lorem ipsum dolor sit amet,
+		consectetus adipiscing elit.`;
+
+	-var buttonName = parameter.buttonName || 'Add to calendar';
+
+	//-
+
+	.events
+		.events__logo
+			img.events__poster(src='src/images/' + photoPoster + '.jpg',
+				alt= photoAlt,
+				title= photoTitle,
+				width='258px',
+				height='578px')
+
+		.events__content
+			.events__title
+				p.events__title-day= day
+					span.events__title-month= month
+			.events__data
+				p.events__data-title This is the title
+			.events__description
+				p.events__description-font= description
+				.events__button-position
+					form
+					+button-standard({
+						extension: 'event',
+						caption: buttonName})

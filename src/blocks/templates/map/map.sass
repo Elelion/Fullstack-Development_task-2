@@ -1,0 +1,122 @@
+.map
+	width: 100%
+	height: 55.6rem
+
+	&__info
+		+border-blue
+		width: auto
+		height: 19rem
+		border-bottom-right-radius: .7rem
+		border-bottom-left-radius: .7rem
+		background: #E75735
+
+		@media screen and (max-width: 1150px)
+			height: auto
+
+		@media screen and (max-width: 920px)
+			+flex-enabled
+			flex-direction: column
+
+	&__event
+		+border-green
+		float: left
+		width: 33rem
+		height: auto
+		margin: 3.6rem 0 0 6rem
+
+		@media screen and (max-width: 920px)
+			width: auto
+			margin-left: auto
+			margin-right: auto
+
+		&-title
+			+user-select__disabled
+			margin: 0
+			padding: 0
+			font-size: 8rem
+			letter-spacing: .06rem
+			text-align: center
+			font-weight: 700
+			color: white
+
+			@media screen and (max-width: 420px)
+				font-size: 6rem
+
+	&__address
+		+border-green
+		float: left
+		width: 40rem
+		height: auto
+		margin: 4rem 0 0 4rem
+
+		@media screen and (max-width: 1150px)
+			margin-right: 6rem
+
+		@media screen and (max-width: 920px)
+			float: none
+			margin-left: auto
+			margin-right: auto
+
+		@media screen and (max-width: 560px)
+			width: auto
+
+		&-title
+			+font-family__bold
+			margin: .8rem 0 0 1.4rem
+			font-size: 3.4rem
+			text-align: left
+			line-height: 4.2rem
+			word-spacing: .6rem
+			font-weight: 700
+			letter-spacing: .09rem
+			text-transform: uppercase
+			color: white
+
+	&__control
+		+border-blue
+		float: right
+		width: 23.5rem
+		height: 8rem
+		margin: 5.2rem 4rem 0 0
+
+		@media screen and (max-width: 1150px)
+			float: none
+			clear: both
+			margin: 15.2rem auto 2rem auto
+
+		@media screen and (max-width: 920px)
+			float: none
+			margin-top: 3rem
+
+	&__element
+		+border-green
+		float: left
+		width: 8rem
+		height: 8rem
+		cursor: pointer
+
+		// FIXIT: replace -px for +px, redrawing sprite for it!!!
+		&-target
+			margin-left: 2.2rem
+			background-image: url(../src/images/sprites.png)
+			background-position: -188px -152px
+
+			&:hover
+				background-position: -266px -152px
+
+			&:active
+				transform: scale(0.9)
+				transition: .1s
+
+		// FIXIT: replace -px for +px, redrawing sprite for it!!!
+		&-marker
+			margin-left: 3.8rem
+			background-image: url(../src/images/sprites.png)
+			background-position: -342px -152px
+
+			&:hover
+				background-position: -407px -153px
+
+			&:active
+				transform: scale(0.9)
+				transition: .1s

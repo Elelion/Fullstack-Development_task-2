@@ -1,0 +1,47 @@
+.search__field
+	+font-family__bold
+	float: left
+	width: 69.5rem
+	min-height: 7.6rem
+	margin: 2rem 0 0 2rem
+	padding-top: 0
+	padding-left: 3.6rem
+	border: none
+	border-top-left-radius: .7rem
+	border-bottom-left-radius: .7rem
+	font-size: 3.8rem
+	letter-spacing: -.25rem
+	background: #E5E5E5
+	color: #696969
+
+	@media screen and (max-width: 830px)
+		width: 40rem
+		font-size: 3rem
+
+	@media screen and (max-width: 560px)
+		width: 26rem
+
+	@media screen and (max-width: 420px)
+		width: 17rem
+		margin-left: 1rem
+
+	&-button
+		float: left
+		width: 9rem
+		min-height: 7.6rem
+		margin-top: 2rem
+		border: none
+		border-radius: 0 .7rem .7rem 0
+		background: #E75735
+		background-image: url(../src/images/sprites.png)
+		background-position: -90px -230px
+		cursor: pointer
+
+		&:active
+			background: #4EB7A8
+			background-image: url(../src/images/sprites.png)
+			background-position: -90px -230px
+
+	&-fill
+		background: #E75735
+		color: white

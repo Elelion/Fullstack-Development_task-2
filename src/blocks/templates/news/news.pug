@@ -1,0 +1,33 @@
+mixin news(parameter)
+	-var parameter = parameter || {};
+	-var photoPoster = parameter.photoPoster || 'news';
+	-var photoAlt = parameter.photoAlt || 'best news';
+	-var photoTitle = parameter.photoTitle || 'SEO words';
+	-var title = parameter.title || `It's all going downhill`;
+	-var data = parameter.data || '24 august 2013';
+
+	-
+		var description = parameter.description || `
+		Lorem ipsum dolor sit amet,
+		consectetus adipiscing elit.
+		Sed condimentum aliquet
+		venenatis. Etiam a nisi nunc,
+		a tincidunt eros.`;
+
+	//-
+
+	.news
+		.news__logo
+			img.news__poster(src='src/images/' + photoPoster + '.jpg',
+				alt= photoAlt,
+				title= photoTitle,
+				width='258px',
+				height='578px')
+
+		.news__content
+			.news__title
+				p.news__title-font= title
+			.news__data
+				p.news__data-font= data
+			.news__description
+				p.news__description-font= description

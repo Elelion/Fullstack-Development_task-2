@@ -1,0 +1,70 @@
+@import ./templates
+
+/**/
+
+// NOTE: normal font
+@font-face
+	font-family: "LatoBold"
+	src: url(fonts/normal__Lato-Hairline.ttf)
+
+// NOTE: bold font
+@font-face
+	font-family: "PTsans75F"
+	src: url(fonts/bold__PTC75F.ttf)
+
+/**/
+
+html
+	overflow-x: hidden
+	+font-family__normal
+
+html,
+body
+	font-size: 10px
+
+body
+	width: 100%
+	margin: 0
+	padding: 0
+
+/**/
+
+// NOTE: general blocks
+@import ./blocks/content/content
+@import ./blocks/chapter/chapter
+
+// NOTE: templates
+@import ./blocks/templates/button-standard/button-standard
+@import ./blocks/templates/button-arrow/button-arrow
+@import ./blocks/templates/chart-percentage/chart-percentage
+@import ./blocks/templates/chart-pie/chart-pie
+@import ./blocks/templates/slider/classic-slider/classic-slider
+@import ./blocks/templates/slider/step-slider/step-slider
+@import ./blocks/templates/stage/stage
+@import ./blocks/templates/feed-back/feed-back
+@import ./blocks/templates/toggles/toggles
+@import ./blocks/templates/tick-boxes/tick-boxes
+@import ./blocks/templates/search/search
+@import ./blocks/templates/drop-down/drop-down
+@import ./blocks/templates/user-profile/user-profile
+@import ./blocks/templates/news/news
+@import ./blocks/templates/events/events
+@import ./blocks/templates/map/map
+@import ./blocks/templates/calendar/calendar
+@import ./blocks/templates/messaging/messaging
+@import ./blocks/templates/video-player/video-player
+
+/**/
+
+// NOTE: content block's
+@import ./blocks/standard-buttons/standard-buttons
+@import ./blocks/arrow-buttons/arrow-buttons
+@import ./blocks/percentages-pie/percentages-pie
+@import ./blocks/sliders/sliders
+@import ./blocks/stages/stages
+@import ./blocks/form-elements/form-elements
+@import ./blocks/search-profile/search-profile
+@import ./blocks/news-events/news-events
+@import ./blocks/location/location
+@import ./blocks/calendar-messaging/calendar-messaging
+@import ./blocks/video/video

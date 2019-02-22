@@ -1,0 +1,27 @@
+mixin stages(parameter)
+	-var parameter = parameter || {};
+	-var titleEnabled = parameter.titleEnabled || 'true';
+	-var title = parameter.title || 'stages';
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.stages
+				.stages__title
+					+chapter__title(title)
+
+				.stages__container
+					+stage
+		default
+			.stages__container
+				+stage
+
+//- NOTE: templates for mixin
+
+//- section.stages
+//-   .stages__title
+//-     +chapter__title('stages')
+
+//-   .stages__container
+//-     +stage

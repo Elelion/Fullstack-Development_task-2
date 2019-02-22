@@ -1,0 +1,43 @@
+.news-events
+	+border-black
+	width: auto
+	height: auto
+	margin: 0 auto 0 auto
+
+	&__title
+		+border-blue
+		width: auto
+		height: auto
+		margin: 21.5rem auto 0 auto
+
+		& > .chapter__title-font
+			margin: .4rem 0 0 2rem
+			padding: 0
+			letter-spacing: .37rem
+
+	&__content
+		+border-green
+		+flex-enabled
+		flex-direction: row
+		width: auto
+		height: auto
+		margin: 6.7rem auto 2.5rem auto
+
+		@media screen and (max-width: 1660px)
+			flex-direction: column
+			height: auto
+
+	&__news
+		width: auto
+		height: auto
+		margin: 1.9rem 0 0 1.9rem
+		border-radius: .7rem
+
+		@media screen and (max-width: 1660px)
+			margin: 1.9rem auto 0 auto
+
+	&__events
+		margin: 1.9rem 0 0 4.8rem
+
+		@media screen and (max-width: 1660px)
+			margin: 1.9rem auto 3rem auto

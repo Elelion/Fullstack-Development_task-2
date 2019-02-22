@@ -1,0 +1,18 @@
+mixin calendar
+	.calendar
+		.calendar__chapter
+			#currentDay.calendar__day
+
+			.calendar__button-month.calendar__back-month
+				p.calendar__set-mapping  <
+			.calendar__button-month.calendar__foward-month
+				p.calendar__set-mapping  >
+
+			.calendar__month
+
+		#calendar.calendar__content
+
+		//- NOTE: mixin, look in templates/button-standard
+		+button-standard({
+			caption: 'today',
+			extension: 'calendar'})

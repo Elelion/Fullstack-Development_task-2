@@ -1,0 +1,92 @@
+body
+	main.content
+		section.content__block.content__standard-buttons
+			+standard-buttons
+
+		section.content__block.content__arrow-buttons
+			+arrows-buttons
+
+		section.content__block.content__charts
+			+percentages-pie
+
+		section.content__block.content__sliders
+			+sliders({classicSliderType: 'stepByStep'})
+
+		section.content__block.content__stages
+			+stages
+
+		section.content__block.content__form-elements
+			+form-elements
+
+		section.content__block.content__profile
+			+search-profile
+			//- TODO: run here...
+
+		section.content__block.content__news-events
+			include ../news-events/news-events
+		//- news
+		//- events
+
+		section.content__block.content__location
+			include ../location/location
+		//- map
+
+		section.content__block.content__calendar-messaging
+			include ../calendar-messaging/calendar-messaging
+		//- calendar
+		//- messaging
+
+		section.content__block.content__video
+			include ../video/video
+		//- video
+
+//- NOTE:
+//- format for all objects: ({parameter: 'value', parameter: number})
+//- if any parameter is NOT specified, value will be - the default
+
+//- standard-buttons:
+//-   titleEnabled: 'true'/'false',
+//-   title: 'name',
+//-   quantity: 1-3
+
+//- arrows-buttons:
+//-   titleEnabled: 'true'/'false',
+//-   title: 'name',
+//-   quantity: 1-3,
+//-   leftButtonDirection: 'left'/'right',
+//-   rightButtonDirection: 'left'/'right'
+
+//- percentages-pie:
+//-   titleEnabled: 'true'/'false',
+//-   title: 'name',
+//-   quantity: 1-4,
+//-   firstChart: 0 - 100,
+//-   secondChart: 0 - 100,
+//-   thirdChart: 0 - 100,
+//-   fourthChart: 0 - 100
+
+//- sliders:
+//-   titleEnabled: 'true'/'false',
+//-   title: 'name',
+//-   classicSliderEnabled: 'true'/'false',
+//-   classicSliderType: 'classic'/'stepByStep',
+//-   stepSliderEnabled: 'true'/'false'
+
+//- stages:
+//-   titleEnabled: 'true'/'false',
+//-   title: 'name'
+
+//- form-elements:
+//-   generalTitleEnabled: 'true',
+//-   generalTitle: 'name',
+
+//-   feedBackEnabled: 'true',
+//-   feedBackButtonTitle: 'name',
+
+//-   togglesTitle: 'name',
+//-   togglesTitleEnabled: 'true',
+//-   togglesEnabled: 'true',
+
+//-   tickTitleBoxes: 'name',
+//-   tickBoxesTitleEnabled: 'true',
+//-   tickBoxesEnabled: 'true'

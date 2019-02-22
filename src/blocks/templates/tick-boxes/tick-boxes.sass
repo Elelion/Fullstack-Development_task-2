@@ -1,0 +1,39 @@
+.tick-boxes
+	+border-red
+	+flex-enabled
+	justify-content: center
+
+	&__case
+		+border-red
+		width: 10rem
+		min-height: 10rem
+		margin: 5.6rem .5rem 0 .5rem
+
+	// NOTE: tick's
+	&__check
+		display: none
+
+		&:checked + .tick-boxes__label:before
+			+transition-duration
+			background-color: #4EB7A8
+			color: white
+
+	&__label
+		position: relative
+		vertical-align: top
+		text-align: center
+		cursor: pointer
+
+		&:before
+			+transition-duration
+			position: absolute
+			margin: 2.4rem 0 0 .8rem
+			padding-top: .7rem
+			width: 6.3rem
+			min-height: 5.6rem
+			border-radius: 5rem
+			font-size: 5rem
+			line-height: 5rem
+			content: '\2713'
+			background: #E5E5E5
+			color: #B6B6B6

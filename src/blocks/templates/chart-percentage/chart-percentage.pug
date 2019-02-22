@@ -1,0 +1,10 @@
+mixin chart-percentages(parameter)
+	-var parameter = parameter || {};
+	-var value = parameter.value || '17.5';
+
+	//-
+
+	.chart-percentages
+		.chart-percentages__value
+			p.chart-percentages__title= value
+		.chart-percentages__draw-svg= value + '%'

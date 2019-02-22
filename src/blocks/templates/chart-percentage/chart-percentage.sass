@@ -1,0 +1,36 @@
+.chart-percentages
+	+border-blue
+	float: left
+	width: 27rem
+	height: 27rem
+
+	&__value
+		+border-red
+		width: 14rem
+		height: 14rem
+		margin: 6.4rem auto 0 6.4rem
+
+	&__title
+		margin: .4rem 2.4rem 0 0
+		padding: 0
+		font-size: 11rem
+		letter-spacing: -1.02rem
+		text-transform: uppercase
+		font-weight: 700
+		text-align: center
+		color: black
+
+	&__draw-svg
+		+border-green
+		margin-top: -20rem
+		display: block
+
+circle
+	fill: rgba(0,0,0,0)
+	stroke: #E5E5E5
+	stroke-width: 12
+
+circle:nth-child(2n)
+	fill: rgba(0,0,0,0)
+	stroke: #E43E17
+	stroke-width: 12

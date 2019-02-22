@@ -1,0 +1,32 @@
+mixin search(parameter)
+	-var parameter = parameter || {};
+	-var placeholder = parameter.placeholder || 'Search';
+	-var value = parameter.value || '';
+	-var fill = parameter.fill || '';
+
+	if (fill === 'true')
+		-
+			var classes = [
+				'search__field',
+				'search__field-fill'
+			];
+	else
+		-
+			var classes = [
+				'search__field'
+			];
+
+	//-
+
+	form
+		input(class=classes
+			type='search',
+			placeholder= placeholder,
+			maxlength='20',
+			required='',
+			oninvalid="setCustomValidity('Заполните это поле');",
+			value= value)
+
+		input.search__field-button(
+			type='submit',
+			value='')

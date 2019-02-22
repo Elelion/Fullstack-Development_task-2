@@ -1,0 +1,109 @@
+.search-profile
+	+border-black
+	+flex-enabled
+	justify-content: center
+	width: auto
+	height: auto
+	margin: 0 auto 0 auto
+
+	@media screen and (max-width: 1660px)
+		flex-direction: column
+
+	@media screen and (max-width: 830px)
+		width: 54rem
+
+	@media screen and (max-width: 560px)
+		width: 47.5rem
+
+	@media screen and (max-width: 420px)
+		width: auto
+
+	&__search
+		+border-green
+		width: 85rem
+		height: auto //57rem
+
+		@media screen and (max-width: 1660px)
+			width: 81rem
+
+		@media screen and (max-width: 830px)
+			width: auto
+			height: 60rem
+
+		@media screen and (max-width: 420px)
+			height: auto
+
+		&-title
+			+border-blue
+			width: auto
+			height: auto
+			margin: 7.5rem auto .5rem auto
+
+			& > .chapter__title-font
+				margin: .4rem 3.5rem 0 0
+				padding: 0
+				letter-spacing: .32rem
+
+	&__list
+		+border-red
+		float: left
+		width: auto
+		height: auto //37rem
+		margin: 2.4rem auto 0 auto
+
+		@media screen and (max-width: 830px)
+			float: none
+			width: 53rem
+			margin-left: auto
+			margin-right: auto
+
+		@media screen and (max-width: 560px)
+			width: 40rem
+			// height: auto
+
+		@media screen and (max-width: 420px)
+			width: 28rem
+
+	&__item
+		+border-blue
+		width: auto
+		height: 11.4rem
+		margin-bottom: .4rem
+
+		// NOTE: fixing, adjust the design for the layout
+		&:nth-child(3)
+			margin-top: 1rem
+
+	&__profile
+		+border-green
+		width: 80.5rem
+		height: auto
+
+		@media screen and (max-width: 830px)
+			float: none
+			width: 53rem
+			margin-left: auto
+			margin-right: auto
+
+		@media screen and (max-width: 560px)
+			width: auto
+
+		@media screen and (max-width: 420px)
+			width: 28rem
+
+		&-title
+			+border-blue
+			width: auto
+			height: auto
+			margin: 7.5rem auto 3rem auto
+
+			& > .chapter__title-font
+				margin: .4rem 0 0 .6rem
+				padding: 0
+				letter-spacing: .32rem
+
+		&-content
+			+border-green
+			width: auto
+			height: auto
+			margin: 3.2rem auto 0 auto

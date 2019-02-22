@@ -1,0 +1,80 @@
+
+.stage
+	+border-blue
+	+flex-enabled
+	justify-content: center
+	width: 165rem
+	height: auto
+	margin: .4rem auto 0 auto
+
+	@media screen and (max-width: 1660px)
+		width: 140rem
+
+	@media screen and (max-width: 1430px)
+		width: 100rem
+
+	@media screen and (max-width: 1050px)
+		width: 53.5rem
+
+	@media screen and (max-width: 560px)
+		width: 39rem
+
+	@media screen and (max-width: 420px)
+		width: 28.5rem
+
+	&__position
+		+border-red
+		width: 100%
+		min-height: 10rem
+		margin: 1rem auto 1rem auto
+
+	&__track
+		+flex-enabled
+		justify-content: space-between
+		width: 98%
+		height: 1rem
+		margin: 4.2rem auto 0 auto
+		border-radius: 1rem
+		outline: none
+		background: #E5E5E5
+
+		&-point
+			position: relative
+			top: -3.2rem
+			float: left
+			width: 7.8rem
+			height: 6.8rem
+			margin: 0rem 0 0 .1rem
+			border-radius: 50%
+			background: #E5E5E5
+			cursor: pointer
+
+			@media screen and (max-width: 420px)
+				top: -1.8rem
+				width: 6.8rem
+				height: 4.8rem
+
+			&:first-child
+				margin-left: 0
+
+		&-font
+			+font-family__bold
+			+user-select__disabled
+			font-size: 4rem
+			padding-top: 1rem
+			text-align: center
+			color: #6F6F6F
+
+			@media screen and (max-width: 420px)
+				padding-top: 0
+
+	&__range
+		&-fill
+			+border-red
+			position: absolute
+			float: left
+			width: 1rem
+			height: 1rem
+			margin: 4.1rem 0 0 3rem
+			border-radius: 1rem
+			background: #E75735

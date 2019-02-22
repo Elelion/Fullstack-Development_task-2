@@ -1,0 +1,45 @@
+mixin arrows-buttons(parameter)
+	-var parameter = parameter || {};
+	-var titleEnabled = parameter.titleEnabled || 'true';
+	-var title = parameter.title || 'arrow buttons';
+	-var quantity = parameter.quantity || 3;
+	-var leftButtonDirection = parameter.leftButtonDirection || 'left';
+	-var rightButtonDirection = parameter.rightButtonDirection || 'right';
+
+	if ((quantity > 3) || (quantity < 1))
+		-quantity = 3;
+
+	//-
+
+	mixin arrows-buttons__item
+		.arrows-buttons__list
+			- for (var i = 0; i < quantity; i++)
+				.arrows-buttons__item
+					.arrows-buttons__container
+						+button-arrow({direction: leftButtonDirection})
+					.arrows-buttons__container
+						+button-arrow({direction: rightButtonDirection})
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.arrows-buttons
+				.arrows-buttons__title
+					+chapter__title(title)
+				+arrows-buttons__item
+		default
+			+arrows-buttons__item
+
+//- NOTE: templates for mixin
+
+//- section.arrows-buttons
+//-   .arrows-buttons__title
+//-     +chapter__title(title)
+
+//-   .arrows-buttons__list
+//-     .arrows-buttons__item
+//-       .arrows-buttons__container
+//-         +button-arrow
+//-       .arrows-buttons__container
+//-         +button-arrow({direction: 'right'})

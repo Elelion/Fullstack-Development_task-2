@@ -1,0 +1,14 @@
+mixin button-arrow(parameter)
+	-var parameter = parameter || {};
+	-var direction = parameter.direction || 'left';
+
+	-
+		var classes = [
+			'button-arrow',
+			`button-arrow__direction-${direction}`
+		];
+
+	//-
+
+	form
+		button(class=classes)

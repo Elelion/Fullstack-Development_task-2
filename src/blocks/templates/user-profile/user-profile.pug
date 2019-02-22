@@ -1,0 +1,28 @@
+mixin user-profile(parameter)
+	-var parameter = parameter || {};
+	-var name = parameter.name || 'John Smith';
+	-var rank = parameter.rank || 'ux designer';
+	-var photoName = parameter.photoName || 'Jeday';
+	-var photoAlt = parameter.photoAlt || 'jedy photos';
+	-var photoTitle = parameter.photoTitle || 'SEO words';
+	-var link = parameter.link || '../404/404.html';
+
+	//-
+
+	.user-profile
+		.user-profile__photo
+			img.user-profile__avatar(src='src/images/' + photoName + '.jpg',
+				alt= photoAlt,
+				title= photoTitle)
+
+		.user-profile__info
+			.user-profile__title
+				p.user-profile__name= name
+				p.user-profile__rank= rank
+			.user-profile__social
+				.user-profile__social-content.user-profile__social-facebook
+					a.user-profile__social-logo(href= link)
+				.user-profile__social-content.user-profile__social-tweeter
+					a.user-profile__social-logo(href= link)
+				.user-profile__social-content.user-profile__social-dribbble
+					a.user-profile__social-logo(href= link)

@@ -1,0 +1,102 @@
+.form-elements
+	+border-black
+	width: auto
+	height: auto
+	margin: 0 auto 0 auto
+
+	@media screen and (max-width: 1580px)
+		float: left
+
+	&__title
+		+border-blue
+		width: auto
+		height: auto
+		margin: 5.5rem auto 0 auto
+
+		& > .chapter__title-font
+			margin: 1.3rem 0 0 2.1rem
+			letter-spacing: .34rem
+
+	&__content
+		+border-blue
+		float: left
+		width: auto
+		height: auto
+		margin: 8rem auto 5.9rem auto
+
+		@media screen and (max-width: 1580px)
+			float: none
+			width: 81rem
+
+		@media screen and (max-width: 830px)
+			+flex-enabled
+			flex-direction: column
+			width: auto
+
+	&__feed-back
+		+border-green
+		float: left
+		width: auto
+		height: auto
+		margin: 4.8rem 0 0 1.5rem
+
+		@media screen and (max-width: 1580px)
+			margin-left: auto
+			margin-right: auto
+
+	/**/
+
+	&__toggles
+		+border-red
+		float: left
+		width: 40rem
+		height: auto
+		margin: 3.5rem 0 0 22.8rem
+
+		@media screen and (max-width: 1580px)
+			float: right
+			margin: 10rem auto 10rem auto
+
+		@media screen and (max-width: 420px)
+			width: 28.5rem
+			height: auto
+
+		&-title
+			+border-blue
+			width: auto
+			height: auto
+
+			& > .chapter__title-font
+				margin: 0 0 0 1.6rem
+				padding: 0
+				letter-spacing: .32rem
+
+	/**/
+
+	&__ticks
+		+border-red
+		float: left
+		width: 40rem
+		height: auto
+		margin: 7.4rem 0 0 22.8rem
+
+		@media screen and (max-width: 1580px)
+			float: left
+			margin: 10rem auto 10rem auto
+
+		@media screen and (max-width: 830px)
+			margin: 0 auto 0 auto
+
+		@media screen and (max-width: 420px)
+			width: 28.5rem
+			height: auto
+
+		&-title
+			+border-blue
+			width: auto
+			height: auto
+
+			& > .chapter__title-font
+				margin: 0 0 0 .5rem
+				padding: 0
+				letter-spacing: .38rem

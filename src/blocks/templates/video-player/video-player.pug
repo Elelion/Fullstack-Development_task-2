@@ -1,0 +1,18 @@
+mixin video-player
+	.video-player
+		.video-player__poster
+			p.video-player__title New Zealand Landscapes Timelapse
+			p.video-player__description from bevan percial
+			p.video-player__link
+				a(href='404/404.html',
+					target='_blank',
+					rel='noopener noreferrer') http://vimeo.com/62980495
+		.video-player__control-panel
+			input.video-player__play(type='button')
+			input.video-player__slider(type='range')
+			.video-player__fullscreen
+				input.video-player__fullscreen-video(type='button')
+
+		video.video-player__source(
+			src='src/video/NewZealandLandscapesTimelapse.mp4',
+			poster='src/images/video_poster.jpg')

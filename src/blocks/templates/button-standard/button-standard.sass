@@ -1,0 +1,156 @@
+.button
+	/**
+		* NOTE:
+		* for ripple animation
+		* position: relative
+		* overflow: hidden
+		*/
+
+	&-standard
+		+font-family__bold
+		position: relative
+		margin: 0 auto 0 auto
+		display: block
+		cursor: pointer
+		overflow: hidden
+		text-transform: uppercase
+		letter-spacing: .42rem
+		text-align: center
+		text-decoration: none
+		color: #4EB7A8
+
+		&:active
+			border-bottom: .1rem solid
+			-webkit-transform: translate(0rem, .8rem)
+			transform: translate(0rem, .8rem)
+
+		&__size
+			&-standard
+				width: 32rem
+				height: 9.4rem
+				padding: 0
+				font-size: 3rem
+
+				@media screen and (max-width: 345px)
+					width: 100%
+					min-width: 21.2rem
+
+			&-small
+				width: 21.2rem
+				height: 6.5rem
+				padding-left: .2rem
+				font-size: 2.5rem
+
+		&__color
+			&-green
+				border: .2rem solid #4EB7A8
+				border-bottom: .5rem solid #28A290
+				border-radius: .8rem
+				background: white
+
+				&:hover
+					background-color: #4EB7A8
+					color: white
+
+			&-red
+				border: .2rem solid #BF3E1F
+				border-bottom: .5rem solid #BF3E1F
+				border-radius: .8rem
+				background: white
+				color: #BF3E1F
+
+				&:hover
+					background-color: #BF3E1F
+					color: white
+
+		&__effect
+			-moz-webkit-transition: all 0.1s
+			-ms-webkit-transition: all 0.1s
+			-o-webkit-transition: all 0.1s
+			-webkit-transition: all 0.1s
+			transition: all 0.1s
+
+		/* NOTE: for site component's */
+		&__extension
+			&-feedback
+				background: #4EB7A8
+				color: white
+
+				@media screen and (max-width: 420px)
+					width: 100%
+					min-width: 21.2rem
+
+				&:hover
+					background: #0C9581
+
+			&-event
+				width: 35.6rem
+				height: 6.6rem
+				margin-top: 1rem
+				margin-left: .5rem
+				padding: 0 0 0 0
+				letter-spacing: .15rem
+
+				@media screen and (max-width: 560px)
+					width: auto
+					font-size: 2rem
+					margin-left: auto
+					margin-right: auto
+
+				&:hover
+					background-color: #E75735
+					color: white
+
+			&-calendar
+				+font-family__bold
+				width: 76.6rem
+				height: 13.2rem
+				margin: 12.6rem auto 0 auto
+				padding: .6rem 0 0 5.3rem
+				border: 0
+				border-top-left-radius: 0
+				border-top-right-radius: 0
+				border-bottom-left-radius: .8rem
+				border-bottom-right-radius: .8rem
+				border-bottom: .1rem solid #E5E5E5
+				background: #E5E5E5
+				font-size: 3.5rem
+				letter-spacing: .58rem
+				text-align: left
+				color: #757575
+
+				@media screen and (max-width: 830px)
+					width: 100%
+					text-align: center
+
+			&-messaging
+				width: 66.8rem
+				margin-top: 2.4rem
+				background: #4EB7A8
+				color: white
+
+				@media screen and (max-width: 830px)
+					width: 100%
+
+				&:hover
+					border-top: .2rem solid #E75735
+					border-left: .2rem solid #E75735
+					border-right: .2rem solid #E75735
+					border-bottom: .6rem solid #E75735
+					background: #E75735
+
+/* NOTE: ripple effect, look in ripple.js */
+.ripple
+	position: absolute
+	width: 0
+	height: 0
+	border-radius: 50%
+	background: rgba(255,255,255,0.4)
+	transform: scale(0)
+	opacity: 1
+	animation: ripple 0.5s linear
+
+@keyframes ripple
+	100%
+		transform: scale(2)
+		opacity: 0

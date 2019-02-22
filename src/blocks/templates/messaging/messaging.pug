@@ -1,0 +1,59 @@
+mixin messaging(parameter)
+	-var parameter = parameter || {};
+	-var name = parameter.name || 'Constantine';
+	-var photoName = parameter.photoName || 'Frodo';
+	-var photoAlt = parameter.photoAlt || 'frodo photos';
+	-var photoTitle = parameter.photoTitle || 'SEO words';
+	-var buttonName = parameter.buttonName || 'Reply';
+
+	mixin messaging-recive(recive)
+		-var recive = recive || {};
+			-var messageRecive = recive.messageRecive || 'msg reciving';
+
+		.messaging__clear
+		.messaging__receive
+			p.messaging__letter.messaging__letter-receive= messageRecive
+
+	mixin messaging-send(send)
+		-var send = send || {};
+			-var messageSend = send.messageSend || 'msg sending';
+
+			.messaging__clear
+				.messaging__send
+					p.messaging__letter= messageSend
+
+	//-
+
+	.messaging
+		.messaging__title
+			p.messaging__name= name
+
+		.messaging__line
+		.messaging__photo
+			img.messaging__avatar(src='src/images/'+ photoName +'.jpg',
+				alt= photoAlt,
+				title= photoTitle)
+
+		.messaging__keys
+			.messaging__button.messaging__button-chat
+			.messaging__button.messaging__button-photo
+
+		.messaging__chat
+			+messaging-recive({messageRecive:
+				'Oh... Im need... You can take money with you ?'})
+
+			+messaging-recive({messageRecive:
+				'Yeah that sounds great. See you then'})
+
+			+messaging-send({messageSend:
+				'Hey! So are we cool to meet at the art gallery? Say 8pm'})
+
+		.messaging__input-form
+			textarea.messaging__letter.messaging__letter-send(
+				placeholder= 'Enter message here...')
+
+		.messaging__reply
+			form
+			+button-standard({
+				extension: 'messaging',
+				caption: buttonName})
