@@ -1,18 +1,23 @@
 mixin search-profile(parameter)
 	-var parameter = parameter || {};
 	-var searchTitleEnabled = parameter.searchTitleEnabled || 'true';
-	-var searchTitle = parameter.searchTitle || 'form elements';
-	-var searchValue = parameter.searchValue || '';
+	-var searchTitle = parameter.searchTitle || 'search / drop down';
+	-var searchFirstEnabled = parameter.searchFirstEnabled || 'true';
+	-var searchSecondEnabled = parameter.searchSecondEnabled || 'true';
+	-var searchValue = parameter.searchValue || `I've not found what I'm looking for...`;
 	-var searchFill = parameter.searchFill || 'true';
 
 	-var dropDownQuantity = parameter.dropDownQuantity || 2;
+	-var dropDownEnabled = parameter.dropDownEnabled || 'true';
+	-var dropDownValue0 = parameter.dropDownValue0 || 'Choose An Option';
 	-var dropDownValue1 = parameter.dropDownValue1 || 'DataBase';
-	-var dropDownValue2 = parameter.dropDownValue2 || '';
+	-var dropDownValue2 = parameter.dropDownValue2 || 'Engine';
 	-var dropDownValue3 = parameter.dropDownValue3 || '';
 	-var dropDownValue4 = parameter.dropDownValue4 || '';
 
 	-var profileTitleEnabled = parameter.profileTitleEnabled || 'true';
-	-var profilePhotoName = parameter.profilePhotoName || 'Frodo';
+	-var profileTitle = parameter.profileTitle || 'user profile';
+	-var profilePhotoNameTitle = parameter.profilePhotoNameTitle || 'Frodo';
 	-var profilePhotoRank = parameter.profilePhotoRank || 'developer';
 	-var profilePhotoName = parameter.profilePhotoName || 'Frodo';
 	-var profilePhotoAlt = parameter.profilePhotoAlt || 'frodo photos';
@@ -21,36 +26,65 @@ mixin search-profile(parameter)
 
 	//-
 
+	mixin search-drop
+		.search-profile__list
+			case searchFirstEnabled
+				when 'true'
+					.search-profile__item
+						+search
+
+			case searchSecondEnabled
+				when 'true'
+					.search-profile__item
+						+search({
+							value: searchValue,
+							fill: searchFill})
+
+			case dropDownEnabled
+				when 'true'
+					.search-profile__item
+						+drop-down({
+								quantity: dropDownQuantity,
+								value0: dropDownValue0,
+								value1: dropDownValue1,
+								value2: dropDownValue2,
+								value3: dropDownValue3,
+								value4: dropDownValue4})
+
+	//-
+
+	mixin profile
+		+user-profile
+		+user-profile({
+			name: profilePhotoNameTitle,
+			rank: profilePhotoRank,
+			photoName: profilePhotoName,
+			photoAlt: profilePhotoAlt,
+			photoTitle: profilePhotoTitle,
+			link: profileLink
+		})
+
+	//-
+
 	section.search-profile
-		.search-profile__search
-			.search-profile__search-title
-				+chapter__title('search / drop down')
-
-			.search-profile__list
-				.search-profile__item
-					+search
-
-				.search-profile__item
-					+search({
-						value: `I've not found what I'm looking for...`,
-						fill: 'true'})
-
-				.search-profile__item
-					+drop-down({quantity: 2, value1: 'DataBase'})
+		case searchTitleEnabled
+			when 'true'
+				.search-profile__search
+					.search-profile__search-title
+						+chapter__title(searchTitle)
+					+search-drop
+			default
+				+search-drop
 
 		//-
 
 		.search-profile__profile
-			.search-profile__profile-title
-				+chapter__title('user profile')
-
-			.search-profile__profile-content
-				+user-profile
-				+user-profile({
-					name: 'Frodo',
-					rank: 'developer',
-					photoName: 'Frodo',
-					photoAlt: 'frodo photos',
-					photoTitle: 'SEO words',
-					link: '../404/404.html'
-				})
+			case profileTitleEnabled
+				when 'true'
+					.search-profile__profile-title
+						+chapter__title(profileTitle)
+					.search-profile__profile-content
+						+profile
+				default
+					.search-profile__profile-content
+						+profile
