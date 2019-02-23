@@ -30,29 +30,44 @@ mixin news-events(parameter)
 
 	//-
 
+	mixin news__item
+		.news-events__news
+			+news({
+				photoPoster: newsPhotoPosterName,
+				photoAlt: newsPhotoAlt,
+				photoTitle: newsPhotoTitle,
+				title: newsTitle,
+				data: newsData,
+				description: newsDescription
+			})
+
+	//-
+
+	mixin events__item
+		.news-events__events
+			+events({
+				photoPoster: eventsPhotoPosterName,
+				photoAlt: eventsPhotoAlt,
+				photoTitle: eventsPhotoTitle,
+				day: eventsDay,
+				month: eventsMonth,
+				title: eventsTitle,
+				description: eventsDescription,
+				buttonName: EventsButtonName
+			})
+
+	//-
+
 	section.news-events
-		.news-events__title
-			+chapter__title(title)
+		case titleEnabled
+			when 'true'
+				.news-events__title
+					+chapter__title(title)
 
-		.news-events__content
-			.news-events__news
-				+news({
-					photoPoster: newsPhotoPosterName,
-					photoAlt: newsPhotoAlt,
-					photoTitle: newsPhotoTitle,
-					title: newsTitle,
-					data: newsData,
-					description: newsDescription
-				})
-
-			.news-events__events
-				+events({
-					photoPoster: eventsPhotoPosterName,
-					photoAlt: eventsPhotoAlt,
-					photoTitle: eventsPhotoTitle,
-					day: eventsDay,
-					month: eventsMonth,
-					title: eventsTitle,
-					description: eventsDescription,
-					buttonName: EventsButtonName
-				})
+				.news-events__content
+					+news__item
+					+events__item
+			default
+				.news-events__content
+					+news__item
+					+events__item
