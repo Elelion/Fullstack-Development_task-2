@@ -1,10 +1,58 @@
-section.news-events
-	.news-events__title
-		+chapter__title('news & events')
+mixin news-events(parameter)
+	-var parameter = parameter || {};
+	-var title = parameter.title || 'news & events';
+	-var titleEnabled = parameter.titleEnabled || 'true';
 
-	.news-events__content
-		.news-events__news
-			+news
+	-var newsPhotoPosterName = parameter.newsPhotoPosterName || 'news';
+	-var newsPhotoAlt = parameter.newsPhotoAlt || 'best news';
+	-var newsPhotoTitle = parameter.newsPhotoTitle || 'SEO words';
+	-var newsTitle = parameter.newsTitle || `It's all going downhill`;
+	-var newsData = parameter.newsData || '24 august 2013';
+	-
+		var newsDescription = parameter.newsDescription || `
+		Lorem ipsum dolor sit amet,
+		consectetus adipiscing elit.
+		Sed condimentum aliquet
+		venenatis. Etiam a nisi nunc,
+		a tincidunt eros.`;
 
-		.news-events__events
-			+events
+	-var eventsPhotoPosterName = parameter.eventsPhotoPosterName || 'events';
+	-var eventsPhotoAlt = parameter.eventsPhotoAlt || 'active events';
+	-var eventsPhotoTitle = parameter.eventsPhotoTitle || 'SEO words';
+	-var eventsDay = parameter.eventsDay || '24';
+	-var eventsMonth = parameter.eventsMonth || 'Aug';
+	-var eventsTitle = parameter.eventsTitle || 'This is the title';
+	-
+		var eventsDescription = parameter.eventsDescription || `
+		Lorem ipsum dolor sit amet,
+		consectetus adipiscing elit.`;
+	-var EventsButtonName = parameter.EventsButtonName || 'Add to calendar';
+
+	//-
+
+	section.news-events
+		.news-events__title
+			+chapter__title(title)
+
+		.news-events__content
+			.news-events__news
+				+news({
+					photoPoster: newsPhotoPosterName,
+					photoAlt: newsPhotoAlt,
+					photoTitle: newsPhotoTitle,
+					title: newsTitle,
+					data: newsData,
+					description: newsDescription
+				})
+
+			.news-events__events
+				+events({
+					photoPoster: eventsPhotoPosterName,
+					photoAlt: eventsPhotoAlt,
+					photoTitle: eventsPhotoTitle,
+					day: eventsDay,
+					month: eventsMonth,
+					title: eventsTitle,
+					description: eventsDescription,
+					buttonName: EventsButtonName
+				})

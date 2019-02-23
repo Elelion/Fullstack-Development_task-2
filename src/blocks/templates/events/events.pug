@@ -3,9 +3,11 @@ mixin events(parameter)
 	-var photoPoster = parameter.photoPoster || 'events';
 	-var photoAlt = parameter.photoAlt || 'active events';
 	-var photoTitle = parameter.photoTitle || 'SEO words';
+
 	-var day = parameter.day || '24';
 	-var month = parameter.month || 'Aug';
 
+	-var title = parameter.title || 'This is the title';
 	-
 		var description = parameter.description || `
 		Lorem ipsum dolor sit amet,
@@ -28,7 +30,7 @@ mixin events(parameter)
 				p.events__title-day= day
 					span.events__title-month= month
 			.events__data
-				p.events__data-title This is the title
+				p.events__data-title= title
 			.events__description
 				p.events__description-font= description
 				.events__button-position
