@@ -1,6 +1,29 @@
-section.location
-	.location__title
-		+chapter__title('location')
+mixin location(parameter)
+	-var parameter = parameter || {};
+	-var locationTitleEnabled = parameter.locationTitleEnabled || 'true';
+	-var locationTitle = parameter.locationTitle || 'location';
+	-var locationEventName = parameter.locationEventName || 'Meet us!';
+	-
+		var locationAddress = parameter.locationAddress ||
+			`1259 california st san francisco, ca`;
 
-	.location__content
-		+map
+	//-
+
+	mixin map__item
+		+map({
+			eventName: locationEventName,
+			address: locationAddress
+		})
+
+	//-
+
+	section.location
+		case locationTitleEnabled
+			when 'true'
+				.location__title
+					+chapter__title(locationTitle)
+				.location__content
+					+map__item
+			default
+				.location__content
+					+map__item

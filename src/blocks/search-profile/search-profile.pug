@@ -4,8 +4,10 @@ mixin search-profile(parameter)
 	-var searchTitle = parameter.searchTitle || 'search / drop down';
 	-var searchFirstEnabled = parameter.searchFirstEnabled || 'true';
 	-var searchSecondEnabled = parameter.searchSecondEnabled || 'true';
-	-var searchValue = parameter.searchValue || `I've not found what I'm looking for...`;
 	-var searchFill = parameter.searchFill || 'true';
+	-
+		var searchValue = parameter.searchValue ||
+			`I've not found what I'm looking for...`;
 
 	-var dropDownQuantity = parameter.dropDownQuantity || 2;
 	-var dropDownEnabled = parameter.dropDownEnabled || 'true';

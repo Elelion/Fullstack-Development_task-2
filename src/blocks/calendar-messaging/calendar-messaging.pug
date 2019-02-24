@@ -1,16 +1,52 @@
-section.calendar-messaging
-	.calendar-messaging__calendar
-		.calendar-messaging__calendar-title
-			+chapter__title('calendar')
+mixin calendar-messaging(parameter)
+	-var parameter = parameter || {};
+	-var calendarTitleEnabled = parameter.calendarTitleEnabled || 'true';
+	-var calendarTitle = parameter.calendarTitle || 'calendar';
 
-		.calendar-messaging__calendar-content
-			+calendar
+	-var messagingTitleEnabled = parameter.messagingTitleEnabled || 'true';
+	-var messagingTitle = parameter.messagingTitle || 'messaging';
+	-var messagingName = parameter.messagingName || 'Sarah Brown';
+	-var messagingPhotoName = parameter.messagingPhotoName || 'Frodo';
+	-var messagingPhotoAlt = parameter.messagingPhotoAlt || 'frodo photos';
+	-var messagingPhotoTitle = parameter.messagingPhotoTitle || 'SEO words';
+	-var messagingButtonTitle = parameter.messagingButtonTitle || 'Reply';
 
 	//-
 
-	.calendar-messaging__messaging
-		.calendar-messaging__messaging-title
-			+chapter__title('messaging')
+	mixin messaging__item
+		+messaging({
+			name: messagingName,
+			photoName: messagingPhotoName,
+			photoAlt: messagingPhotoAlt,
+			photoTitle: messagingPhotoTitle,
+			buttonTitle: messagingButtonTitle
+		})
 
-		.calendar-messaging__messaging-content
-			+messaging({name: 'Sarah Brown'})
+	//-
+
+	section.calendar-messaging
+		.calendar-messaging__calendar
+			case calendarTitleEnabled
+				when 'true'
+					.calendar-messaging__calendar-title
+						+chapter__title(calendarTitle)
+
+					.calendar-messaging__calendar-content
+						+calendar
+				default
+					.calendar-messaging__calendar-content
+						+calendar
+
+		//-
+
+		.calendar-messaging__messaging
+			case messagingTitleEnabled
+				when 'true'
+					.calendar-messaging__messaging-title
+						+chapter__title(messagingTitle)
+
+					.calendar-messaging__messaging-content
+						+messaging__item
+				default
+					.calendar-messaging__messaging-content
+						+messaging__item

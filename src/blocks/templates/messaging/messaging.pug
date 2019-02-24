@@ -4,7 +4,7 @@ mixin messaging(parameter)
 	-var photoName = parameter.photoName || 'Frodo';
 	-var photoAlt = parameter.photoAlt || 'frodo photos';
 	-var photoTitle = parameter.photoTitle || 'SEO words';
-	-var buttonName = parameter.buttonName || 'Reply';
+	-var buttonTitle = parameter.buttonTitle || 'Reply';
 
 	mixin messaging-recive(recive)
 		-var recive = recive || {};
@@ -38,6 +38,7 @@ mixin messaging(parameter)
 			.messaging__button.messaging__button-chat
 			.messaging__button.messaging__button-photo
 
+		//- NOTE: this a template for maket
 		.messaging__chat
 			+messaging-recive({messageRecive:
 				'Oh... Im need... You can take money with you ?'})
@@ -54,6 +55,7 @@ mixin messaging(parameter)
 
 		.messaging__reply
 			form
-			+button-standard({
-				extension: 'messaging',
-				caption: buttonName})
+				//- NOTE: mixin, look in templates/button-standard
+				+button-standard({
+					extension: 'messaging',
+					caption: buttonTitle})

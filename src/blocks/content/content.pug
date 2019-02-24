@@ -25,13 +25,10 @@ body
 			+news-events
 
 		section.content__block.content__location
-			include ../location/location
-		//- map
+			+location
 
 		section.content__block.content__calendar-messaging
-			include ../calendar-messaging/calendar-messaging
-		//- calendar
-		//- messaging
+			+calendar-messaging
 
 		section.content__block.content__video
 			include ../video/video
@@ -148,3 +145,24 @@ body
 //- 	eventsTitle: 'text',
 //- 	eventsDescription: `text`,
 //- 	EventsButtonName: 'text'
+
+//- ---
+
+//- location
+//- 	locationTitleEnabled: 'true'/'false',
+//- 	locationTitle: 'text',
+//- 	locationEventName: 'text',
+//- 	locationAddress: `text`
+
+//- ---
+
+//- calendar-messaging
+//- 	calendarTitleEnabled: true'/'false',
+//- 	calendarTitle: 'text',
+//- 	messagingTitleEnabled: true'/'false',
+//- 	messagingTitle: 'text',
+//- 	messagingName: 'text',
+//- 	messagingPhotoName: 'namePictureInFolder',
+//- 	messagingPhotoAlt: 'SEO alt text',
+//- 	messagingPhotoTitle: 'SEO words text',
+//- 	messagingButtonTitle: 'text'
