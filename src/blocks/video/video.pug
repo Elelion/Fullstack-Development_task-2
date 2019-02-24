@@ -1,6 +1,44 @@
-section.video
-	.video__title
-		+chapter__title('video')
+mixin video(parameter)
+	-var parameter = parameter || {};
+	-var titleEnabled = parameter.titleEnabled || 'true';
+	-var title = parameter.title || 'video';
 
-	.video__content
-		+video-player
+	-
+		var posterTitle = parameter.posterTitle ||
+			'New Zealand Landscapes Timelapse';
+
+		var posterDescription = parameter.posterDescription ||
+			'from bevan percial';
+
+		var posterLink = parameter.posterLink ||
+			'http://vimeo.com/62980495';
+
+		var videoSource = parameter.videoSource ||
+			'src/video/NewZealandLandscapesTimelapse.mp4';
+
+		var videoPoster = parameter.videoPoster ||
+			'src/images/video_poster.jpg';
+
+	//-
+
+	mixin video__item
+		+video-player({
+			title: posterTitle,
+			description: posterDescription,
+			link: posterLink,
+			videoSrc: videoSource,
+			videoImagePoster: videoPoster
+		})
+
+	//-
+
+	section.video
+		case titleEnabled
+			when 'true'
+				.video__title
+					+chapter__title(title)
+				.video__content
+					+video__item
+			default
+				.video__content
+					+video__item
