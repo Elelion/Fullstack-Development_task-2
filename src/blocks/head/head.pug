@@ -1,21 +1,21 @@
 mixin headList
 	-var patch = 'src/blocks/templates/';
 
-	//- 
+	//-
 
 	doctype html
 	html(lang='ru-RU')
 		head
 			//- NOTE: SEO
 			meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-			meta(name='Keywords', content='Full Stack Development, FSD, quest-2')
-			meta(name='description', content='Best company on the world for Web dev')
-			meta(name='viewport', content='width=device-width, initial-scale=1.0, \
-				maximum-scale=1.0, user-scalable=no')
+			meta(name='Keywords', content='Full Stack Development, FSD')
+			meta(name='description', content='Hardcore training')
+			meta(name='viewport', content='width=device-width, \
+				initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 
-			link(rel='shortcut icon', type='image/x-icon', 
+			link(rel='shortcut icon', type='image/x-icon',
 				href='src/images/favicon.png')
-				
+
 			title  maket-2
 
 			//- NOTE: CSS's
@@ -39,5 +39,5 @@ mixin headList
 
 			//- TODO: to link the compiled file, for webPack
 			//- script(src = 'src/scripts.js' defer)
-			
+
 		include ../content/content
