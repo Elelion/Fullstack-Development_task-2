@@ -3,6 +3,8 @@ mixin arrows-buttons(parameter)
 	-var titleEnabled = parameter.titleEnabled || 'true';
 	-var title = parameter.title || 'arrow buttons';
 	-var quantity = parameter.quantity || 3;
+
+	-var typeButton = parameter.typeButton || 'arrow';
 	-var leftButtonDirection = parameter.leftButtonDirection || 'left';
 	-var rightButtonDirection = parameter.rightButtonDirection || 'right';
 
@@ -11,14 +13,18 @@ mixin arrows-buttons(parameter)
 
 	//-
 
-	mixin arrows-buttons__item
+	mixin arrows-buttons__row
 		.arrows-buttons__list
 			- for (var i = 0; i < quantity; i++)
 				.arrows-buttons__item
 					.arrows-buttons__container
-						+button-arrow({direction: leftButtonDirection})
+						+buttons({
+							type: typeButton,
+							direction: leftButtonDirection})
 					.arrows-buttons__container
-						+button-arrow({direction: rightButtonDirection})
+						+buttons({
+							type: typeButton,
+							direction: rightButtonDirection})
 
 	//-
 
@@ -27,9 +33,9 @@ mixin arrows-buttons(parameter)
 			section.arrows-buttons
 				.arrows-buttons__title
 					+chapter__title(title)
-				+arrows-buttons__item
+				+arrows-buttons__row
 		default
-			+arrows-buttons__item
+			+arrows-buttons__row
 
 //- NOTE: templates for mixin
 

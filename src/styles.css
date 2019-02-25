@@ -241,6 +241,34 @@ body {
         border-right: 0.2rem solid #E75735;
         border-bottom: 0.6rem solid #E75735;
         background: #E75735; }
+  .button-arrow {
+    border: 0.1rem solid red;
+    position: relative;
+    float: left;
+    width: 13.8rem;
+    height: 13.8rem;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    vertical-align: bottom;
+    background: url("./blocks/templates/buttons/images/arrows.png") no-repeat; }
+    .button-arrow__direction-left {
+      margin: 0.5rem 0.5rem;
+      background-position: -296px -7px; }
+    .button-arrow__direction-right {
+      margin: 0.5rem 0.5rem;
+      background-position: -441px -7px; }
+    .button-arrow__direction-left:hover {
+      background-position: -7px -8px; }
+    .button-arrow__direction-right:hover {
+      background-position: -153px -8px; }
+    .button-arrow__direction-left:active {
+      background-position: -585px -7px; }
+    .button-arrow__direction-right:active {
+      background-position: -731px -7px; }
 
 /* NOTE: ripple effect, look in ripple.js */
 .ripple {
@@ -249,58 +277,6 @@ body {
   height: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
-  opacity: 1;
-  animation: ripple 0.5s linear; }
-
-@keyframes ripple {
-  100% {
-    transform: scale(2);
-    opacity: 0; } }
-.button-arrow {
-  border: 0.1rem solid red;
-  float: left;
-  width: 13.8rem;
-  height: 13.8rem;
-  margin: 0 0.5rem;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  vertical-align: bottom;
-  background: url("./blocks/templates/button-arrow/images/sprites.png") no-repeat;
-  /* NOTE: for ripple animation */
-  position: relative;
-  overflow: hidden; }
-  .button-arrow__direction-left {
-    margin: 0.5rem 0.5rem;
-    background-position: -296px -7px; }
-  .button-arrow__direction-right {
-    margin: 0.5rem 0.5rem;
-    background-position: -441px -7px; }
-  .button-arrow__direction-left:hover {
-    background-position: -7px -8px; }
-  .button-arrow__direction-right:hover {
-    background-position: -153px -8px; }
-  .button-arrow__direction-left:active {
-    background-position: -585px -7px; }
-  .button-arrow__direction-right:active {
-    background-position: -731px -7px; }
-
-/**
- * NOTE:
- * ripple effect, look in ripple.js
- *
- * TODO:
- * make a separate rule in JS under arrow buttons,
- * so as -ripple here scores -ripple standard buttons
- */
-.ripple {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(134, 203, 193, 0.9);
   transform: scale(0);
   opacity: 1;
   animation: ripple 0.5s linear; }

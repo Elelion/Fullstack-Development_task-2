@@ -9,7 +9,7 @@ mixin standard-buttons(parameter)
 
 	//-
 
-	mixin standard-buttons__item(settings)
+	mixin standard-buttons__column(settings)
 		-var settings = settings || {};
 		-var sizeBlock = settings.sizeBlock || 'small';
 		-var sizeButton = settings.sizeButton || 'small';
@@ -21,33 +21,29 @@ mixin standard-buttons(parameter)
 				case sizeBlock
 					when 'small'
 						.standard-buttons__small-block
-							+button-standard({
-								size: sizeButton,
-								color: colorButton})
+							+buttons({size: sizeButton, color: colorButton})
 					when 'standard'
 						.standard-buttons__normal-block
-							+button-standard({
-								size: sizeButton,
-								color: colorButton})
+							+buttons({size: sizeButton, color: colorButton})
 
 	//-
 
 	mixin standard-buttons__list
-		+standard-buttons__item({
+		+standard-buttons__column({
 			quantityButton: quantity})
 
-		+standard-buttons__item({
+		+standard-buttons__column({
 			quantityButton: quantity,
 			sizeBlock: 'standard',
 			sizeButton: 'standard'})
 
-		+standard-buttons__item({
+		+standard-buttons__column({
 			quantityButton: quantity,
 			sizeBlock: 'standard',
 			sizeButton: 'standard',
 			colorButton: 'red'})
 
-		+standard-buttons__item({
+		+standard-buttons__column({
 			quantityButton: quantity,
 			sizeBlock: 'small',
 			sizeButton: 'small',
