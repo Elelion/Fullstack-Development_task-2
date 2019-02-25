@@ -6,6 +6,7 @@ mixin news(parameter)
 
 	-var title = parameter.title || `It's all going downhill`;
 	-var data = parameter.data || '24 august 2013';
+
 	-
 		var description = parameter.description || `
 		Lorem ipsum dolor sit amet,
@@ -14,11 +15,14 @@ mixin news(parameter)
 		venenatis. Etiam a nisi nunc,
 		a tincidunt eros.`;
 
+	//- FIXME: check the path, when importing the block to other projects
+	-var patch = parameter.patch || 'src/blocks/templates/news/images/';
+
 	//-
 
 	.news
 		.news__logo
-			img.news__poster(src='src/images/' + photoPoster + '.jpg',
+			img.news__poster(src= patch + photoPoster + '.jpg',
 				alt= photoAlt,
 				title= photoTitle,
 				width='258px',

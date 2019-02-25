@@ -7,7 +7,7 @@
 		*/
 
 	&-standard
-		+font-family__bold
+		font-weight: 700
 		position: relative
 		margin: 0 auto 0 auto
 		display: block
@@ -102,11 +102,11 @@
 					color: white
 
 			&-calendar
-				+font-family__bold
+				font-family: 700
 				width: 76.6rem
 				height: 13.2rem
 				margin: 12.6rem auto 0 auto
-				padding: .6rem 0 0 5.3rem
+				padding: .0rem 0 0 5.3rem
 				border: 0
 				border-top-left-radius: 0
 				border-top-right-radius: 0
@@ -115,7 +115,7 @@
 				border-bottom: .1rem solid #E5E5E5
 				background: #E5E5E5
 				font-size: 3.5rem
-				letter-spacing: .58rem
+				letter-spacing: .35rem
 				text-align: left
 				color: #757575
 
@@ -126,11 +126,15 @@
 			&-messaging
 				width: 66.8rem
 				margin-top: 2.4rem
+				padding: .2rem 0 0 26.5rem
+				text-align: left
 				background: #4EB7A8
 				color: white
 
 				@media screen and (max-width: 830px)
 					width: 100%
+					padding: .2rem 0 0 0
+					text-align: center
 
 				&:hover
 					border-top: .2rem solid #E75735

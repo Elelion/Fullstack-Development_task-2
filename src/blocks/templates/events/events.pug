@@ -8,6 +8,7 @@ mixin events(parameter)
 	-var month = parameter.month || 'Aug';
 
 	-var title = parameter.title || 'This is the title';
+
 	-
 		var description = parameter.description || `
 		Lorem ipsum dolor sit amet,
@@ -15,11 +16,15 @@ mixin events(parameter)
 
 	-var buttonName = parameter.buttonName || 'Add to calendar';
 
+	//- FIXME: check the path, when importing the block to other projects
+	-var patch = parameter.patch || 'src/blocks/templates/events/images/';
+
 	//-
 
 	.events
 		.events__logo
-			img.events__poster(src='src/images/' + photoPoster + '.jpg',
+			img.events__poster(
+				src= patch + photoPoster + '.jpg',
 				alt= photoAlt,
 				title= photoTitle,
 				width='258px',
