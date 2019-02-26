@@ -2,128 +2,128 @@
 
 class VideoPlayer {
 
-	constructor(id) {
-		this.startDuration;
-		this.VideoPlayerId = id;
+    constructor(id) {
+        this.startDuration;
+        this.VideoPlayerId = id;
 
-		this.beginEvent();
-		this.getVideoDuration = this.getVideoDuration.bind(this);
-	}
+        this.beginEvent();
+        this.getVideoDuration = this.getVideoDuration.bind(this);
+    }
 
-	initDOMElements() {
-		this.video = 
-			document.getElementsByClassName('video-player__source')[this.VideoPlayerId];
+    initDOMElements() {
+        this.video =
+            document.getElementsByClassName('video-player__source')[this.VideoPlayerId];
 
-		this.duration = 
-			document.getElementsByClassName('video-player__slider')[this.VideoPlayerId];
+        this.duration =
+            document.getElementsByClassName('video-player__slider')[this.VideoPlayerId];
 
-		this.playPause = 
-			document.getElementsByClassName('video-player__play')[this.VideoPlayerId];
+        this.playPause =
+            document.getElementsByClassName('video-player__play')[this.VideoPlayerId];
 
-		this.posterText = 
-			document.getElementsByClassName('video-player__poster')[this.VideoPlayerId];
+        this.posterText =
+            document.getElementsByClassName('video-player__poster')[this.VideoPlayerId];
 
-		this.buttonFullScreen = 
-			document.getElementsByClassName('video-player__fullscreen-video')[this.VideoPlayerId];
-	}
+        this.buttonFullScreen =
+            document.getElementsByClassName('video-player__fullscreen-video')[this.VideoPlayerId];
+    }
 
-	setDurationStartValue(durationValue) {
-		this.startDuration = durationValue;
-	}
+    setDurationStartValue(durationValue) {
+        this.startDuration = durationValue;
+    }
 
-	setDurationValue(durationValue) {
-		this.duration.value = durationValue;
-	}
+    setDurationValue(durationValue) {
+        this.duration.value = durationValue;
+    }
 
-	setVideoCurrentTime(currentTime) {
-		this.video.currentTime = currentTime;
-	}
+    setVideoCurrentTime(currentTime) {
+        this.video.currentTime = currentTime;
+    }
 
-	setDurationMin(durationMin) {
-		this.duration.min = durationMin;
-	}
+    setDurationMin(durationMin) {
+        this.duration.min = durationMin;
+    }
 
-	// NOTE: set the max value that will be played (...359)
-	setDurationMax(durationMax) {
-		this.duration.max = durationMax;
-	}
+    // NOTE: set the max value that will be played (...359)
+    setDurationMax(durationMax) {
+        this.duration.max = durationMax;
+    }
 
-	setPlayPauseImagePos(position) {
-		this.playPause.style.backgroundPosition = position;
-	}
+    setPlayPauseImagePos(position) {
+        this.playPause.style.backgroundPosition = position;
+    }
 
-	setPosterTextStyle(display) {
-		this.posterText.style.display = display;
-	}
+    setPosterTextStyle(display) {
+        this.posterText.style.display = display;
+    }
 
-	// NOTE: start or pause video
-	PlayPauseVideo() {
-		if (this.video.paused) {
-			this.video.play();
-			this.setDurationStartValue(setInterval(this.getVideoDuration, 1000));
-			this.setPlayPauseImagePos('-40px -246px');
-			this.setPosterTextStyle('none');
-			this.setDurationMax(Math.round(this.video.duration));
-		} else {
-			this.video.pause();
-			clearInterval(this.startDuration);
-			this.setPlayPauseImagePos('2px -246px');
+    // NOTE: start or pause video
+    PlayPauseVideo() {
+        if (this.video.paused) {
+            this.video.play();
+            this.setDurationStartValue(setInterval(this.getVideoDuration, 1000));
+            this.setPlayPauseImagePos('-90px -14px');
+            this.setPosterTextStyle('none');
+            this.setDurationMax(Math.round(this.video.duration));
+        } else {
+            this.video.pause();
+            clearInterval(this.startDuration);
+            this.setPlayPauseImagePos('-46px -14px');
 
-			if (browserWidth >= 450) {
-				this.setPosterTextStyle('block');
-			}
-		}
-	}
-	
-	// NOTE: to track the time elapsed video
-	getVideoDuration() {
-		this.setDurationValue(this.video.currentTime);
+            if (browserWidth >= 450) {
+                this.setPosterTextStyle('block');
+            }
+        }
+    }
 
-		console.log('video.currentTime: ' + this.video.currentTime);
-		console.log('duration.value: ' + this.duration.value);
-		console.log('video.duration: ' + this.video.duration);
-	}
-	
-	// NOTE: to change the status of the slider
-	clearAnimateRangeVideo() {
-		clearInterval(this.startDuration);
-		
-		// NOTE: to start the video when rewinding
-		if (!this.video.paused) {
-			this.PlayPauseVideo();
-		}
-	}
-	
-	// NOTE: rewind video by slider
-	movedRangeVideo() {
-		this.setVideoCurrentTime(this.duration.value);
-		this.PlayPauseVideo();
-	}
+    // NOTE: to track the time elapsed video
+    getVideoDuration() {
+        this.setDurationValue(this.video.currentTime);
 
-	getFullScreenVideoMode() {
-		if (this.video.requestFullscreen) {
-			this.video.requestFullscreen();
-		} else if (this.video.msRequestFullscreen) {
-			this.video.msRequestFullscreen();
-		} else if (this.video.mozRequestFullScreen) {
-			this.video.mozRequestFullScreen();
-		} else if (this.video.webkitRequestFullscreen) {
-			this.video.webkitRequestFullscreen();
-		}
-	}
+        console.log('video.currentTime: ' + this.video.currentTime);
+        console.log('duration.value: ' + this.duration.value);
+        console.log('video.duration: ' + this.video.duration);
+    }
 
-	beginEvent() {
-		this.initDOMElements();
-		this.setDurationValue(0);
-		this.setDurationMin(0);
-		
-		this.video.onclick = () => {this.PlayPauseVideo()};
-		this.playPause.onclick = () => {this.PlayPauseVideo()};
+    // NOTE: to change the status of the slider
+    clearAnimateRangeVideo() {
+        clearInterval(this.startDuration);
 
-		this.duration.onmousedown = () => {this.clearAnimateRangeVideo()};
-		this.duration.onmouseup = () => {this.movedRangeVideo()};
-		this.buttonFullScreen.onclick = () => {this.getFullScreenVideoMode()};
-	}
+        // NOTE: to start the video when rewinding
+        if (!this.video.paused) {
+            this.PlayPauseVideo();
+        }
+    }
+
+    // NOTE: rewind video by slider
+    movedRangeVideo() {
+        this.setVideoCurrentTime(this.duration.value);
+        this.PlayPauseVideo();
+    }
+
+    getFullScreenVideoMode() {
+        if (this.video.requestFullscreen) {
+            this.video.requestFullscreen();
+        } else if (this.video.msRequestFullscreen) {
+            this.video.msRequestFullscreen();
+        } else if (this.video.mozRequestFullScreen) {
+            this.video.mozRequestFullScreen();
+        } else if (this.video.webkitRequestFullscreen) {
+            this.video.webkitRequestFullscreen();
+        }
+    }
+
+    beginEvent() {
+        this.initDOMElements();
+        this.setDurationValue(0);
+        this.setDurationMin(0);
+
+        this.video.onclick = () => { this.PlayPauseVideo() };
+        this.playPause.onclick = () => { this.PlayPauseVideo() };
+
+        this.duration.onmousedown = () => { this.clearAnimateRangeVideo() };
+        this.duration.onmouseup = () => { this.movedRangeVideo() };
+        this.buttonFullScreen.onclick = () => { this.getFullScreenVideoMode() };
+    }
 }
 
 new VideoPlayer(0);
@@ -187,7 +187,7 @@ new VideoPlayer(0);
 // function clearAnimateRangeVideo() {
 // 	clearInterval(startDuration);
 
-	// что бы видео стартовало при перемотке
+// что бы видео стартовало при перемотке
 // 	if (!video.paused) {
 // 		PlayPauseVideo();
 // 	}

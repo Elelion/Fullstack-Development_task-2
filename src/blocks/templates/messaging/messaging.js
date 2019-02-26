@@ -9,47 +9,47 @@ const CHAT_BTN = document.getElementsByClassName('messaging__button-chat')[0];
 var msgBtnStatus = 0;
 
 function msg() {
-	if (msgBtnStatus == 0) {
-		MSG_CHAT.style.display = 'block';
-		CHAT_BTN.style.backgroundPosition = '-619px -152px';
+    if (msgBtnStatus == 0) {
+        MSG_CHAT.style.display = 'block';
+        CHAT_BTN.style.backgroundPosition = '-132px 8px';
 
-		msgBtnStatus = 1;
-	} else {
-		MSG_CHAT.style.display = 'none';
-		CHAT_BTN.style.backgroundPosition = '-482px -152px';
+        msgBtnStatus = 1;
+    } else {
+        MSG_CHAT.style.display = 'none';
+        CHAT_BTN.style.backgroundPosition = '6px 8px';
 
-		msgBtnStatus = 0;
-	}
+        msgBtnStatus = 0;
+    }
 
-	TXT_INPUT.value = '';
+    TXT_INPUT.value = '';
 }
 
 function msgAdd() {
-	if (msgBtnStatus == 1 && TXT_INPUT.value != '') {
-		let clear = document.createElement('div');
-		clear.className = 'messaging__clear';
+    if (msgBtnStatus == 1 && TXT_INPUT.value != '') {
+        let clear = document.createElement('div');
+        clear.className = 'messaging__clear';
 
-		let div = document.createElement('div');
-		div.className = 'messaging__send';
-		div.innerHTML = '<p class=messaging__letter>' + TXT_INPUT.value + '</p>';
-		
-		PARENT.insertBefore(clear, PARENT.firstChild);
-		PARENT.insertBefore(div, PARENT.firstChild);
+        let div = document.createElement('div');
+        div.className = 'messaging__send';
+        div.innerHTML = '<p class=messaging__letter>' + TXT_INPUT.value + '</p>';
 
-		TXT_INPUT.value = '';
-	}
+        PARENT.insertBefore(clear, PARENT.firstChild);
+        PARENT.insertBefore(div, PARENT.firstChild);
+
+        TXT_INPUT.value = '';
+    }
 }
 
 function overMsg() {
-	if (msgBtnStatus == 0) {
-		CHAT_BTN.style.backgroundPosition = '-549px -152px';
-	}
+    if (msgBtnStatus == 0) {
+        CHAT_BTN.style.backgroundPosition = '-61px 8px';
+    }
 }
 
 function leaveMsg() {
-	if (msgBtnStatus == 0) {
-		CHAT_BTN.style.backgroundPosition = '-482px -152px';
-	}
+    if (msgBtnStatus == 0) {
+        CHAT_BTN.style.backgroundPosition = '6px 8px';
+    }
 }
 
 document.getElementsByClassName('messaging__button-chat')[0].onclick = msg;

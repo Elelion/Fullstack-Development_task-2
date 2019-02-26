@@ -1,3 +1,6 @@
+//- FIXME: messagingIcons - check the path, when importing the block to other projects
+$path: './blocks/templates/messaging/images/messagingIcons.png'
+
 .messaging
 	+border-blue
 	+flex-enabled
@@ -86,8 +89,8 @@
 		&-chat
 			float: left
 			margin: 5.5rem 0 0 6.2rem
-			background: url("../src/images/sprites.png") no-repeat
-			background-position: -482px -152px
+			background: url($path) no-repeat
+			background-position: 6px 8px
 			cursor: pointer
 
 			@media screen and (max-width: 500px)
@@ -99,21 +102,21 @@
 		&-photo
 			float: right
 			margin: 5.5rem 7.2rem 0 0
-			background: url("../src/images/sprites.png") no-repeat
-			background-position: -692px -156px
+			background: url($path) no-repeat
+			background-position: -200px 4px
 			cursor: pointer
+
+			&:hover
+				background-position: -276px 4px
+
+			&:active
+				background-position: -352px 4px
 
 			@media screen and (max-width: 500px)
 				margin: 5.5rem 3.2rem 0 0
 
 			@media screen and (max-width: 420px)
 				margin: 5.5rem 1rem 0 0
-
-			&:hover
-				background-position: -768px -156px
-
-			&:active
-				background-position: -844px -156px
 
 	&__chat
 		+border-red

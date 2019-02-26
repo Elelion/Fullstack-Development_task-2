@@ -1,3 +1,6 @@
+//- FIXME: search - check the path, when importing the block to other projects
+$path: './blocks/templates/search/images/search.png'
+
 .search__field
 	+font-family__bold
 	float: left
@@ -33,14 +36,14 @@
 		border: none
 		border-radius: 0 .7rem .7rem 0
 		background: #E75735
-		background-image: url(../src/images/sprites.png)
-		background-position: -90px -230px
+		background-image: url($path)
+		background-position: -2px -10px
 		cursor: pointer
 
 		&:active
 			background: #4EB7A8
-			background-image: url(../src/images/sprites.png)
-			background-position: -90px -230px
+			background-image: url($path)
+			background-position: -2px -10px
 
 	&-fill
 		background: #E75735
