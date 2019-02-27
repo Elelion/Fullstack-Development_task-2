@@ -1,4 +1,4 @@
-@import ./templates
+@import ./general-mixins
 
 /**/
 
@@ -29,41 +29,43 @@ body
 
 /**/
 
-// NOTE: general blocks
-@import ./blocks/content/content
-@import ./blocks/chapter/chapter
+// NOTE: pages
+@import ./blocks/pages/main/content/content
 
-// NOTE: templates
-@import ./blocks/templates/buttons/buttons
-@import ./blocks/templates/chart-percentage/chart-percentage
-@import ./blocks/templates/chart-pie/chart-pie
-@import ./blocks/templates/slider/classic-slider/classic-slider
-@import ./blocks/templates/slider/step-slider/step-slider
-@import ./blocks/templates/stage/stage
-@import ./blocks/templates/feed-back/feed-back
-@import ./blocks/templates/toggles/toggles
-@import ./blocks/templates/tick-boxes/tick-boxes
-@import ./blocks/templates/search/search
-@import ./blocks/templates/drop-down/drop-down
-@import ./blocks/templates/user-profile/user-profile
-@import ./blocks/templates/news/news
-@import ./blocks/templates/events/events
-@import ./blocks/templates/map/map
-@import ./blocks/templates/calendar/calendar
-@import ./blocks/templates/messaging/messaging
-@import ./blocks/templates/video-player/video-player
+// NOTE: general blocks
+@import ./blocks/ui-kit/chapter/chapter
+
+// NOTE: single components
+@import ./blocks/components/buttons/buttons
+@import ./blocks/components/chart-percentage/chart-percentage
+@import ./blocks/components/chart-pie/chart-pie
+@import ./blocks/components/slider/classic-slider/classic-slider
+@import ./blocks/components/slider/step-slider/step-slider
+@import ./blocks/components/stage/stage
+@import ./blocks/components/feed-back/feed-back
+@import ./blocks/components/toggles/toggles
+@import ./blocks/components/tick-boxes/tick-boxes
+@import ./blocks/components/search/search
+@import ./blocks/components/drop-down/drop-down
+@import ./blocks/components/user-profile/user-profile
+@import ./blocks/components/news/news
+@import ./blocks/components/events/events
+@import ./blocks/components/map/map
+@import ./blocks/components/calendar/calendar
+@import ./blocks/components/messaging/messaging
+@import ./blocks/components/video-player/video-player
 
 /**/
 
-// NOTE: content block's
-@import ./blocks/standard-buttons/standard-buttons
-@import ./blocks/arrow-buttons/arrow-buttons
-@import ./blocks/percentages-pie/percentages-pie
-@import ./blocks/sliders/sliders
-@import ./blocks/stages/stages
-@import ./blocks/form-elements/form-elements
-@import ./blocks/search-profile/search-profile
-@import ./blocks/news-events/news-events
-@import ./blocks/location/location
-@import ./blocks/calendar-messaging/calendar-messaging
-@import ./blocks/video/video
+// NOTE: ui-kit content block's
+@import ./blocks/ui-kit/standard-buttons/standard-buttons
+@import ./blocks/ui-kit/arrow-buttons/arrow-buttons
+@import ./blocks/ui-kit/percentages-pie/percentages-pie
+@import ./blocks/ui-kit/sliders/sliders
+@import ./blocks/ui-kit/stages/stages
+@import ./blocks/ui-kit/form-elements/form-elements
+@import ./blocks/ui-kit/search-profile/search-profile
+@import ./blocks/ui-kit/news-events/news-events
+@import ./blocks/ui-kit/location/location
+@import ./blocks/ui-kit/calendar-messaging/calendar-messaging
+@import ./blocks/ui-kit/video/video

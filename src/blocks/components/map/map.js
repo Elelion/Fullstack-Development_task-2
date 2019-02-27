@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 
 //- FIXME: mapMarker - check the path, when importing the block to other projects
-const mapMarker = 'src/blocks/templates/map/images/mapMarker.png';
+const mapMarker = 'src/blocks/components/map/images/mapMarker.png';
 
 function initMap() {
     // var element = document.getElementById('map');

@@ -124,13 +124,13 @@ body {
    * overflow: hidden
    */ }
   .button-standard {
-    font-weight: 700;
     position: relative;
     margin: 0 auto 0 auto;
     display: block;
     cursor: pointer;
     overflow: hidden;
     text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 0.42rem;
     text-align: center;
     text-decoration: none;
@@ -203,7 +203,6 @@ body {
         background-color: #E75735;
         color: white; }
     .button-standard__extension-calendar {
-      font-family: 700;
       width: 76.6rem;
       height: 13.2rem;
       margin: 12.6rem auto 0 auto;
@@ -216,6 +215,7 @@ body {
       border-bottom: 0.1rem solid #E5E5E5;
       background: #E5E5E5;
       font-size: 3.5rem;
+      font-family: 700;
       letter-spacing: 0.35rem;
       text-align: left;
       color: #757575; }
@@ -254,7 +254,7 @@ body {
     overflow: hidden;
     outline: none;
     vertical-align: bottom;
-    background: url("./blocks/templates/buttons/images/arrows.png") no-repeat; }
+    background: url("./blocks/components/buttons/images/arrows.png") no-repeat; }
     .button-arrow__direction-left {
       margin: 0.5rem 0.5rem;
       background-position: -296px -7px; }
@@ -451,7 +451,7 @@ circle:nth-child(2n) {
     height: 5rem;
     border: none;
     border-radius: 2.8rem;
-    background-image: url("./blocks/templates/slider/classic-slider/images/point.png");
+    background-image: url("./blocks/components/slider/classic-slider/images/point.png");
     background-position: 5.5rem 5.5rem;
     cursor: pointer;
     outline: none; }
@@ -460,7 +460,7 @@ circle:nth-child(2n) {
     height: 5rem;
     border: none;
     border-radius: 2.8rem;
-    background-image: url("./blocks/templates/slider/classic-slider/images/point.png");
+    background-image: url("./blocks/components/slider/classic-slider/images/point.png");
     background-position: 5.5rem 5.5rem;
     cursor: pointer;
     outline: none; }
@@ -531,7 +531,7 @@ circle:nth-child(2n) {
       height: 5rem;
       border: none;
       border-radius: 2.8rem;
-      background-image: url("./blocks/templates/slider/step-slider/images/point.png");
+      background-image: url("./blocks/components/slider/step-slider/images/point.png");
       background-position: 5.5rem 5.5rem;
       cursor: pointer;
       outline: none; }
@@ -540,7 +540,7 @@ circle:nth-child(2n) {
       height: 5rem;
       border: none;
       border-radius: 2.8rem;
-      background-image: url("./blocks/templates/slider/step-slider/images/point.png");
+      background-image: url("./blocks/components/slider/step-slider/images/point.png");
       background-position: 5.5rem 5.5rem;
       cursor: pointer;
       outline: none; }
@@ -1075,12 +1075,12 @@ circle:nth-child(2n) {
     border: none;
     border-radius: 0 0.7rem 0.7rem 0;
     background: #E75735;
-    background-image: url("./blocks/templates/search/images/search.png");
+    background-image: url("./blocks/components/search/images/search.png");
     background-position: -2px -10px;
     cursor: pointer; }
     .search__field-button:active {
       background: #4EB7A8;
-      background-image: url("./blocks/templates/search/images/search.png");
+      background-image: url("./blocks/components/search/images/search.png");
       background-position: -2px -10px; }
   .search__field-fill {
     background: #E75735;
@@ -1105,7 +1105,7 @@ circle:nth-child(2n) {
   overflow: hidden;
   cursor: pointer;
   background: #E5E5E5;
-  background-image: url("./blocks/templates/drop-down/images/dropDown.png");
+  background-image: url("./blocks/components/drop-down/images/dropDown.png");
   background-position: 0px -4px;
   background-repeat: no-repeat;
   background-position-x: 694px;
@@ -1725,7 +1725,7 @@ circle:nth-child(2n) {
     cursor: pointer; }
     .map__element-target {
       margin-left: 2.2rem;
-      background-image: url("./blocks/templates/map/images/mapSprite.png");
+      background-image: url("./blocks/components/map/images/mapSprite.png");
       background-position: -4px 0px; }
       .map__element-target:hover {
         background-position: -82px 0px; }
@@ -1734,7 +1734,7 @@ circle:nth-child(2n) {
         transition: 0.1s; }
     .map__element-marker {
       margin-left: 4.8rem;
-      background-image: url("./blocks/templates/map/images/mapSprite.png");
+      background-image: url("./blocks/components/map/images/mapSprite.png");
       background-position: 132px -1px; }
       .map__element-marker:hover {
         background-position: 67px -2px; }
@@ -1847,8 +1847,9 @@ circle:nth-child(2n) {
     padding: 0.6rem 1rem 0 0;
     background: #E75735;
     font-size: 2.6rem;
-    letter-spacing: -0.17rem;
     font-weight: 700;
+    letter-spacing: -0.17rem;
+    text-decoration: none;
     color: white; }
     @media screen and (max-width: 480px) {
       .calendar__list-month {
@@ -1970,7 +1971,7 @@ circle:nth-child(2n) {
     .messaging__button-chat {
       float: left;
       margin: 5.5rem 0 0 6.2rem;
-      background: url("./blocks/templates/messaging/images/messagingIcons.png") no-repeat;
+      background: url("./blocks/components/messaging/images/messagingIcons.png") no-repeat;
       background-position: 6px 8px;
       cursor: pointer; }
       @media screen and (max-width: 500px) {
@@ -1982,7 +1983,7 @@ circle:nth-child(2n) {
     .messaging__button-photo {
       float: right;
       margin: 5.5rem 7.2rem 0 0;
-      background: url("./blocks/templates/messaging/images/messagingIcons.png") no-repeat;
+      background: url("./blocks/components/messaging/images/messagingIcons.png") no-repeat;
       background-position: -200px 4px;
       cursor: pointer; }
       .messaging__button-photo:hover {
@@ -2285,7 +2286,7 @@ circle:nth-child(2n) {
     margin: 4.4rem 4.4rem;
     border: none;
     cursor: pointer;
-    background: url("./blocks/templates/video-player/images/video-player.png") no-repeat;
+    background: url("./blocks/components/video-player/images/video-player.png") no-repeat;
     background-position: -46px -14px; }
     @media screen and (max-width: 420px) {
       .video-player__play {
@@ -2337,7 +2338,7 @@ circle:nth-child(2n) {
       border-radius: 1.6rem;
       cursor: pointer;
       outline: none;
-      background-image: url("./blocks/templates/video-player/images/video-player.png");
+      background-image: url("./blocks/components/video-player/images/video-player.png");
       background-position: -14px -26px; }
     .video-player__slider::-moz-range-thumb {
       width: 1.6rem;
@@ -2346,7 +2347,7 @@ circle:nth-child(2n) {
       border-radius: 1.6rem;
       cursor: pointer;
       outline: none;
-      background-image: url("./blocks/templates/video-player/images/video-player.png");
+      background-image: url("./blocks/components/video-player/images/video-player.png");
       background-position: -14px -26px; }
     .video-player__slider::-moz-range-track {
       width: 71.5rem;
@@ -2388,7 +2389,7 @@ circle:nth-child(2n) {
       margin: 2.2rem 2.2rem;
       border: none;
       cursor: pointer;
-      background: url("./blocks/templates/video-player/images/video-player.png") no-repeat;
+      background: url("./blocks/components/video-player/images/video-player.png") no-repeat;
       background-position: -146px 0px; }
       @media screen and (max-width: 560px) {
         .video-player__fullscreen-video {
