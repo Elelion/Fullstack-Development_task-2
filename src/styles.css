@@ -1698,7 +1698,6 @@ circle:nth-child(2n) {
       text-align: left;
       line-height: 4.2rem;
       word-spacing: 0.6rem;
-      font-weight: 700;
       letter-spacing: 0.09rem;
       text-transform: uppercase;
       color: white; }
@@ -1847,7 +1846,6 @@ circle:nth-child(2n) {
     padding: 0.6rem 1rem 0 0;
     background: #E75735;
     font-size: 2.6rem;
-    font-weight: 700;
     letter-spacing: -0.17rem;
     text-decoration: none;
     color: white; }
@@ -1867,7 +1865,6 @@ circle:nth-child(2n) {
     border: 0.3rem solid white;
     background: #F2F2F2;
     font-size: 4.6rem;
-    font-weight: 700;
     text-align: center;
     cursor: pointer; }
     @media screen and (max-width: 480px) {
@@ -2197,7 +2194,6 @@ circle:nth-child(2n) {
     word-spacing: 0.58rem;
     letter-spacing: 0.32rem;
     text-transform: uppercase;
-    font-weight: 700;
     color: white; }
     @media screen and (max-width: 1150px) {
       .video-player__description {
