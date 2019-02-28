@@ -67,13 +67,13 @@
 			font-size: 19.5rem
 			line-height: 7.4rem
 			text-align: left
-			letter-spacing: -.82rem
+			letter-spacing: -1.62rem
 			word-spacing: 2.8rem
 			font-weight: 700
 			color: white
 
 		&-month
-			margin-left: 4rem
+			margin-left: 4.5rem
 			font-size: 8.4rem
 			letter-spacing: -.12rem
 
@@ -105,13 +105,15 @@
 	&__description
 		+border-blue
 		width: 44rem
-		height: 20rem
+		height: 10rem
 		margin: .0rem auto 0 auto
 		border-bottom-color: #E75735
+		overflow: auto
 
 		@media screen and (max-width: 560px)
 			width: auto
 			height: auto
+			overflow: inherit
 
 		&-font
 			+font-family__normal
@@ -129,7 +131,7 @@
 			+border-red
 			width: 37rem
 			height: auto //8.5rem
-			margin: 4rem auto 0 auto
+			margin: 1rem auto 0 auto
 
 			@media screen and (max-width: 560px)
 				width: auto

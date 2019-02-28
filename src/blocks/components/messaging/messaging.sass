@@ -5,10 +5,13 @@ $path: './blocks/components/messaging/images/messagingIcons.png'
 	+border-blue
 	+flex-enabled
 	flex-direction: column
-	width: auto
+	width: 78.1rem
 	height: 117.6rem
 	margin: .4rem
 	background: #F2F2F2
+
+	@media screen and (max-width: 830px)
+		width: auto
 
 	&__title
 		+border-blue
@@ -20,9 +23,13 @@ $path: './blocks/components/messaging/images/messagingIcons.png'
 
 	&__name
 		+font-family__normal
-		+wrapping__disabled
 		margin: .2rem 0 7.6rem 0
-		padding-top: 5.6rem
+		padding: 5.6rem 2rem 0 2rem
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
 		font-size: 8rem
 		letter-spacing: .12rem
 		text-align: center

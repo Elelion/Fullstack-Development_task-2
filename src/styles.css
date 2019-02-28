@@ -129,6 +129,8 @@ body {
     display: block;
     cursor: pointer;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.42rem;
@@ -192,7 +194,7 @@ body {
       margin-top: 1rem;
       margin-left: 0.5rem;
       padding: 0 0 0 0;
-      letter-spacing: 0.15rem; }
+      letter-spacing: 0.08rem; }
       @media screen and (max-width: 560px) {
         .button-standard__extension-event {
           width: auto;
@@ -1054,6 +1056,9 @@ circle:nth-child(2n) {
   border-bottom-left-radius: 0.7rem;
   font-size: 3.8rem;
   letter-spacing: -0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   background: #E5E5E5;
   color: #696969; }
   @media screen and (max-width: 830px) {
@@ -1096,6 +1101,7 @@ circle:nth-child(2n) {
   width: 78.6rem;
   height: 7.6rem;
   margin: 2rem 0 0 2rem;
+  padding-right: 8rem;
   padding-left: 3.2rem;
   padding-top: 0;
   border: 0.1rem solid #E5E5E5;
@@ -1103,6 +1109,8 @@ circle:nth-child(2n) {
   font-size: 3.8rem;
   letter-spacing: -0.25rem;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
   background: #E5E5E5;
   background-image: url("./blocks/components/drop-down/images/dropDown.png");
@@ -1288,12 +1296,16 @@ circle:nth-child(2n) {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-    float: left;
-    margin: 0.2px 0 0 11rem;
+    border: 1px solid red;
+    width: 30rem;
+    margin: 0.2px auto 0 auto;
     font-size: 3rem;
     text-align: center;
     word-spacing: 0.6rem;
     letter-spacing: 0.18rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-transform: uppercase;
     color: #6F6F6F; }
     @media screen and (max-width: 420px) {
@@ -1477,12 +1489,14 @@ circle:nth-child(2n) {
     border: 0.1rem dotted blue;
     width: 44rem;
     height: 24rem;
-    margin: 2rem auto 0 auto; }
+    margin: 2rem auto 0 auto;
+    overflow: auto; }
     @media screen and (max-width: 560px) {
       .news__description {
-        margin-bottom: 4rem;
         width: auto;
-        height: auto; } }
+        height: auto;
+        margin-bottom: 4rem;
+        overflow: inherit; } }
     .news__description-font {
       font-family: "LatoBold", "Arial", "sans-serif";
       margin: 0.6rem 0 0 0rem;
@@ -1559,12 +1573,12 @@ circle:nth-child(2n) {
       font-size: 19.5rem;
       line-height: 7.4rem;
       text-align: left;
-      letter-spacing: -0.82rem;
+      letter-spacing: -1.62rem;
       word-spacing: 2.8rem;
       font-weight: 700;
       color: white; }
     .events__title-month {
-      margin-left: 4rem;
+      margin-left: 4.5rem;
       font-size: 8.4rem;
       letter-spacing: -0.12rem; }
       @media screen and (max-width: 560px) {
@@ -1592,13 +1606,15 @@ circle:nth-child(2n) {
   .events__description {
     border: 0.1rem dotted blue;
     width: 44rem;
-    height: 20rem;
+    height: 10rem;
     margin: 0rem auto 0 auto;
-    border-bottom-color: #E75735; }
+    border-bottom-color: #E75735;
+    overflow: auto; }
     @media screen and (max-width: 560px) {
       .events__description {
         width: auto;
-        height: auto; } }
+        height: auto;
+        overflow: inherit; } }
     .events__description-font {
       font-family: "LatoBold", "Arial", "sans-serif";
       margin: 0 0 0 1.6rem;
@@ -1613,7 +1629,7 @@ circle:nth-child(2n) {
     border: 0.1rem solid red;
     width: 37rem;
     height: auto;
-    margin: 4rem auto 0 auto; }
+    margin: 1rem auto 0 auto; }
     @media screen and (max-width: 560px) {
       .events__button-position {
         width: auto; } }
@@ -1887,10 +1903,13 @@ circle:nth-child(2n) {
   display: -ms-flex;
   display: -o-flex;
   flex-direction: column;
-  width: auto;
+  width: 78.1rem;
   height: 117.6rem;
   margin: 0.4rem;
   background: #F2F2F2; }
+  @media screen and (max-width: 830px) {
+    .messaging {
+      width: auto; } }
   .messaging__title {
     border: 0.1rem dotted blue;
     width: auto;
@@ -1900,11 +1919,11 @@ circle:nth-child(2n) {
     background: #4EB7A8; }
   .messaging__name {
     font-family: "LatoBold", "Arial", "sans-serif";
+    margin: 0.2rem 0 7.6rem 0;
+    padding: 5.6rem 2rem 0 2rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin: 0.2rem 0 7.6rem 0;
-    padding-top: 5.6rem;
     font-size: 8rem;
     letter-spacing: 0.12rem;
     text-align: center;
@@ -2129,7 +2148,7 @@ circle:nth-child(2n) {
   width: 162.4rem;
   height: auto;
   margin: 0.4rem;
-  /* slider range */ }
+  /* NOTE: slider range */ }
   @media screen and (max-width: 1660px) {
     .video-player {
       width: 100%;
@@ -2146,6 +2165,9 @@ circle:nth-child(2n) {
     position: absolute;
     width: auto;
     margin: 5rem 5rem; }
+    @media screen and (max-width: 1660px) {
+      .video-player__poster {
+        width: 100rem; } }
     @media screen and (max-width: 1150px) {
       .video-player__poster {
         width: 70rem; } }
@@ -2161,16 +2183,21 @@ circle:nth-child(2n) {
       .video-player__poster {
         width: 26rem; } }
   .video-player__title {
-    margin: 6.2rem 0 0 4.8rem;
+    width: 150rem;
+    margin: 2.2rem 0 0 4.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 9.6rem;
     text-align: left;
-    line-height: 3.6rem;
+    line-height: 10.8rem;
     word-spacing: -0.1rem;
-    letter-spacing: -0.22rem;
+    letter-spacing: -0.46rem;
     font-weight: 700;
     color: white; }
     @media screen and (max-width: 1660px) {
       .video-player__title {
+        width: auto;
         font-size: 6rem; } }
     @media screen and (max-width: 1150px) {
       .video-player__title {
@@ -2187,14 +2214,21 @@ circle:nth-child(2n) {
         margin-left: 0.5rem; } }
   .video-player__description {
     font-family: "PTsans75F", "Arial", "sans-serif";
-    margin: 4.2rem 0 0 5.6rem;
+    width: 150rem;
+    margin: 0.2rem 0 0 4.8rem;
+    padding-left: 0.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 3.4rem;
     text-align: left;
-    line-height: 4.2rem;
     word-spacing: 0.58rem;
-    letter-spacing: 0.32rem;
+    letter-spacing: 0.36rem;
     text-transform: uppercase;
     color: white; }
+    @media screen and (max-width: 1660px) {
+      .video-player__description {
+        width: auto; } }
     @media screen and (max-width: 1150px) {
       .video-player__description {
         margin-top: 2rem; } }
@@ -2205,14 +2239,22 @@ circle:nth-child(2n) {
       .video-player__description {
         visibility: hidden; } }
   .video-player__link {
-    margin: 6.6rem 0 0 5.6rem;
+    width: 150rem;
+    margin: 6.8rem 0 0 4.8rem;
+    padding-left: 0.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 4.6rem;
     text-align: left;
     line-height: 3.6rem;
-    letter-spacing: 0.05rem;
+    letter-spacing: -0.08rem;
     word-spacing: -0.1rem;
     font-weight: 700;
     color: white; }
+    @media screen and (max-width: 1660px) {
+      .video-player__link {
+        width: auto; } }
     @media screen and (max-width: 1150px) {
       .video-player__link {
         margin-top: 2rem; } }
@@ -2303,7 +2345,7 @@ circle:nth-child(2n) {
     outline: none;
     cursor: pointer;
     background: #E5E5E5;
-    /* pointer */ }
+    /* NOTE: pointer */ }
     @media screen and (max-width: 1660px) {
       .video-player__slider {
         width: 100%; } }
@@ -2455,10 +2497,6 @@ circle:nth-child(2n) {
         -moz-display: block;
         -ms-display: block;
         -o-display: block;
-        display: block;
-        display: block;
-        display: block;
-        display: block;
         display: block; } }
   .standard-buttons__item {
     border: 0.1rem solid green;
@@ -2574,10 +2612,6 @@ circle:nth-child(2n) {
         -moz-display: block;
         -ms-display: block;
         -o-display: block;
-        display: block;
-        display: block;
-        display: block;
-        display: block;
         display: block; } }
   .arrows-buttons__item {
     border: 0.1rem solid green;
@@ -2643,10 +2677,6 @@ circle:nth-child(2n) {
         -moz-display: block;
         -ms-display: block;
         -o-display: block;
-        display: block;
-        display: block;
-        display: block;
-        display: block;
         display: block; } }
     @media screen and (max-width: 730px) {
       .percentages-pie__list {
@@ -3031,7 +3061,7 @@ circle:nth-child(2n) {
   .news-events__news {
     width: auto;
     height: auto;
-    margin: 1.9rem 0 0 1.9rem;
+    margin: 1.9rem 0 0 1.4rem;
     border-radius: 0.7rem; }
     @media screen and (max-width: 1660px) {
       .news-events__news {
