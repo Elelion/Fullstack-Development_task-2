@@ -112,11 +112,15 @@
 		min-height: 13.5rem
 
 	&__name
-		+wrapping__disabled
 		+user-select__disabled
 		width: 38rem
 		margin: 2rem 0 0 2.8rem
 		padding: 0
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
 		font-size: 5rem
 		letter-spacing: .02rem
 		text-align: center
@@ -153,9 +157,12 @@
 
 		@media screen and (max-width: 420px)
 			+border-red
-			+wrapping__disabled
 			width: 21.5rem
 			margin-left: 1rem
+
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
 
 	&__social
 		+border-red

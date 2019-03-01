@@ -34,9 +34,13 @@ $path: './blocks/components/map/images/mapSprite.png'
 
 		&-title
 			+user-select__disabled
-			+wrapping__disabled
 			margin: 0
 			padding: 0
+
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+
 			font-size: 8rem
 			letter-spacing: .06rem
 			text-align: center
@@ -50,8 +54,9 @@ $path: './blocks/components/map/images/mapSprite.png'
 		+border-green
 		float: left
 		width: 40rem
-		height: auto
+		min-height: 10rem
 		margin: 4rem 0 0 4rem
+		overflow: auto
 
 		@media screen and (max-width: 1150px)
 			margin-right: 6rem
