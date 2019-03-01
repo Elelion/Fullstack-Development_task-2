@@ -4,7 +4,7 @@ class DropBox {
 
     constructor() {
         /**
-         * NOTE: 
+         * NOTE:
          * other method, part-1:
          * this.getChoise = this.getChoise.bind(this);
          */
@@ -22,7 +22,7 @@ class DropBox {
     beginEvent() {
         this.getSelectors();
         /**
-         * NOTE: 
+         * NOTE:
          * other method, part-2:
          * this.dropDown.onchange  = this.getChoise;
          */

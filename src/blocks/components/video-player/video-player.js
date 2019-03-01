@@ -56,7 +56,6 @@ class VideoPlayer {
         this.posterText.style.display = display;
     }
 
-    // NOTE: start or pause video
     PlayPauseVideo() {
         if (this.video.paused) {
             this.video.play();

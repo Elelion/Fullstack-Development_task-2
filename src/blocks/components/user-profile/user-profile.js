@@ -1,60 +1,61 @@
 /* jshint esversion: 6 */
 
 class UserProfile {
-    
-	constructor(selector, colorOver, colorLeave) {
-		this.selector = selector;
-		this.beginEvent(colorOver, colorLeave);
-	}
 
-	setSelectors() {
-		this.userInfo = this.selector.querySelector('.user-profile__info');
-		this.userPhoto = this.selector.querySelector('.user-profile__photo');
-	}
+    constructor(selector, colorOver, colorLeave) {
+        this.selector = selector;
+        this.beginEvent(colorOver, colorLeave);
+    }
 
-	setColorOver(color) {
-		if (/#\w\w\w\w\w\w/.test(color)) {
-			this.colorOver = color;
-		} else {
-			this.colorOver = '#4EB7A8';
-		}
-	}
-	
-	setColorLeave(color) {
-		if (/#\w\w\w\w\w\w/.test(color)) {
-			this.colorLeave = color;
-		} else {
-			this.colorLeave = '#E5E5E5';
-		}
-	}
+    setSelectors() {
+        this.userInfo = this.selector.querySelector('.user-profile__info');
+        this.userPhoto = this.selector.querySelector('.user-profile__photo');
+    }
 
-	setEvent(eventName, eventMethod) {
-		this.userInfo.addEventListener(eventName, (event) => {
-			event.preventDefault();
-			this.userPhoto.style.borderColor = eventMethod;
-			this.userInfo.style.borderColor = eventMethod;
-		});
-	}
+    setColorOver(color) {
+        if (/#\w\w\w\w\w\w/.test(color)) {
+            this.colorOver = color;
+        } else {
+            this.colorOver = '#4EB7A8';
+        }
+    }
 
-	beginEvent(colorOver, colorLeave) {
-		this.setSelectors();
-		this.setColorOver(colorOver);
-		this.setColorLeave(colorLeave);
-		this.setEvent('mouseover', this.colorOver);
-		this.setEvent('mouseout', this.colorLeave);
-	}
+    setColorLeave(color) {
+        if (/#\w\w\w\w\w\w/.test(color)) {
+            this.colorLeave = color;
+        } else {
+            this.colorLeave = '#E5E5E5';
+        }
+    }
+
+    setEvent(eventName, eventMethod) {
+        this.userInfo.addEventListener(eventName, (event) => {
+            event.preventDefault();
+            this.userPhoto.style.borderColor = eventMethod;
+            this.userInfo.style.borderColor = eventMethod;
+        });
+    }
+
+    beginEvent(colorOver, colorLeave) {
+        this.setSelectors();
+        this.setColorOver(colorOver);
+        this.setColorLeave(colorLeave);
+        this.setEvent('mouseover', this.colorOver);
+        this.setEvent('mouseout', this.colorLeave);
+    }
 }
 
 const allUserProfiles = document.getElementsByClassName('user-profile');
 const settings = [
-	{colorOver: '', colorLeave: '#ИвановИван'}, 
-	{colorOver: '#E75735', colorLeave: '123'}];
+    { colorOver: '', colorLeave: '#ИвановИван' },
+    { colorOver: '#E75735', colorLeave: '123' }
+];
 
 for (let i = 0; i < allUserProfiles.length; i += 1) {
-	new UserProfile(
-		allUserProfiles[i], 
-		settings[i].colorOver, 
-		settings[i].colorLeave);
+    new UserProfile(
+        allUserProfiles[i],
+        settings[i].colorOver,
+        settings[i].colorLeave);
 };
 
 // ----------------------------------------------------------------------------
@@ -62,7 +63,7 @@ for (let i = 0; i < allUserProfiles.length; i += 1) {
 // class UserProfile {
 
 //     constructor(colorOver, colorLeave) {
-        
+
 //         this.beginEvent(colorOver, colorLeave)
 //     }
 
@@ -76,9 +77,9 @@ for (let i = 0; i < allUserProfiles.length; i += 1) {
 //             this.colorOver = color;
 //         } else {
 //             this.colorOver = '#4EB7A8';
-//         }       
+//         }
 //     }
-    
+
 //     setColorLeave(color) {
 //         if (/#\w\w\w\w\w\w/.test(color)) {
 //             this.colorLeave = color;
@@ -104,7 +105,7 @@ for (let i = 0; i < allUserProfiles.length; i += 1) {
 //             });
 //         }
 //     }
-  
+
 //     beginEvent(colorOver, colorLeave) {
 //         this.setSelector();
 //         this.setColorOver(colorOver);
@@ -113,7 +114,7 @@ for (let i = 0; i < allUserProfiles.length; i += 1) {
 //         this.getLaunchLeave();
 //     }
 // }
-  
+
 // const allUserInfo = document.querySelectorAll('.user-profile__info');
 // for (let i = 0; i < allUserInfo.length; i += 1) {
 //     // NOTE: colorOver, colorLeave
@@ -134,7 +135,7 @@ for (let i = 0; i < allUserProfiles.length; i += 1) {
 //     setColorOver(color) {
 //         this.colorOver = color;
 //     }
-    
+
 //     setColorLeave(color) {
 //         this.colorLeave = color;
 //     }
@@ -161,14 +162,14 @@ for (let i = 0; i < allUserProfiles.length; i += 1) {
 //             });
 //         }
 //     }
-  
+
 //     getBeginEvent(colorOver, colorLeave) {
 //         this.setColorEvent(colorOver, colorLeave)
 //         this.getLaunchOver();
 //         this.getLaunchLeave();
 //     }
 // }
-  
+
 // let user = new UserProfile();
 
 // // NOTE: colorOver, colorLeave
