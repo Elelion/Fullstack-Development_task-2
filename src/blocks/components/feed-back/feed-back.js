@@ -122,9 +122,19 @@ class FeedBack {
 
     beginEvent() {
         this.initDOMElements();
-        this.name.onblur = () => { this.getCheck() };
-        this.email.onblur = () => { this.getCheck() };
-        this.button.onclick = () => { this.getEventButton() };
+
+        this.name.onblur = () => {
+            this.getCheck();
+        };
+
+        this.email.onblur = () => {
+            this.getCheck();
+        };
+
+        this.button.onclick = () => {
+            this.getEventButton();
+        };
+
         this.setEmailValue('elelion@yandex.ru');
         this.getCheck();
     }

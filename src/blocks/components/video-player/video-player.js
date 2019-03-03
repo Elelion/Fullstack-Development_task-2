@@ -116,12 +116,25 @@ class VideoPlayer {
         this.setDurationValue(0);
         this.setDurationMin(0);
 
-        this.video.onclick = () => { this.PlayPauseVideo() };
-        this.playPause.onclick = () => { this.PlayPauseVideo() };
+        this.video.onclick = () => {
+            this.PlayPauseVideo();
+        };
 
-        this.duration.onmousedown = () => { this.clearAnimateRangeVideo() };
-        this.duration.onmouseup = () => { this.movedRangeVideo() };
-        this.buttonFullScreen.onclick = () => { this.getFullScreenVideoMode() };
+        this.playPause.onclick = () => {
+            this.PlayPauseVideo();
+        };
+
+        this.duration.onmousedown = () => {
+            this.clearAnimateRangeVideo();
+        };
+
+        this.duration.onmouseup = () => {
+            this.movedRangeVideo();
+        };
+
+        this.buttonFullScreen.onclick = () => {
+            this.getFullScreenVideoMode();
+        };
     }
 }
 

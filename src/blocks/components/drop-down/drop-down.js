@@ -26,7 +26,9 @@ class DropBox {
          * other method, part-2:
          * this.dropDown.onchange  = this.getChoise;
          */
-        this.dropDown.onchange = () => { this.getChoise() };
+        this.dropDown.onchange = () => {
+            this.getChoise();
+        };
     }
 }
 

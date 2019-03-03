@@ -50,18 +50,14 @@ class Toggles {
     status() {
         if (this.switcher1.checked == true) {
             this.setSwitch('1', 'ON', '10');
-            console.log('switcher1: true');
         } else {
             this.setSwitch('1', 'ON', '50');
-            console.log('switcher1: false');
         }
 
         if (switcher2.checked == true) {
             this.setSwitch('2', 'ON', '10');
-            console.log('switcher2: true');
         } else {
             this.setSwitch('2', 'ON', '50');
-            console.log('switcher2: false');
         }
     }
 
@@ -72,8 +68,13 @@ class Toggles {
         this.setSwitcherCheck('2', true);
         this.setSwitcherPosition('2', '10');
 
-        this.switcher1.onclick = () => { this.status() };
-        this.switcher2.onclick = () => { this.status() };
+        this.switcher1.onclick = () => {
+            this.status();
+        };
+
+        this.switcher2.onclick = () => {
+            this.status();
+        };
 
         console.log('switcher1 value: ' + switcher1.value);
         console.log('switcher2 value: ' + switcher2.value);
