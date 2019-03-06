@@ -1,7 +1,6 @@
 /* jshint esversion: 6 */
 
 class VideoPlayer {
-
     constructor(id) {
         this.startDuration;
         this.VideoPlayerId = id;

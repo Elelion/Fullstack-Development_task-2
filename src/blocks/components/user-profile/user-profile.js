@@ -1,7 +1,6 @@
 /* jshint esversion: 6 */
 
 class UserProfile {
-
     constructor(selector, colorOver, colorLeave) {
         this.selector = selector;
         this.beginEvent(colorOver, colorLeave);

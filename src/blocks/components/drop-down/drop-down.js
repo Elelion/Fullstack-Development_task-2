@@ -1,7 +1,6 @@
 /* jshint esversion: 6 */
 
 class DropBox {
-
     constructor() {
         /**
          * NOTE:

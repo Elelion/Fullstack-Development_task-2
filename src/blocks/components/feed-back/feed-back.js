@@ -1,7 +1,6 @@
 /* jshint esversion: 6 */
 
 class FeedBack {
-
     constructor(id) {
         alert('asdsadasd');
         this.initId(id);
