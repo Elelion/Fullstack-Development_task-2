@@ -40,7 +40,7 @@ function initMap() {
         content: '<h1> Bingo...! </h1>'
     });
 
-    // делаем наш маркер слушателем					
+    // делаем наш маркер слушателем
     marker.addListener('click', function() {
         // делаем окошко с информацией
         InfoWindow.open(myMap, marker);
