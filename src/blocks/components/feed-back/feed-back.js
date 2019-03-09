@@ -2,7 +2,6 @@
 
 class FeedBack {
     constructor(id) {
-        alert('asdsadasd');
         this.initId(id);
         this.beginEvent();
     }
@@ -20,34 +19,44 @@ class FeedBack {
 
     initDOMElements() {
         this.name =
-            document.getElementsByClassName('feed-back__input-name')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__input-name')[this.feedBackId];
 
         this.email =
-            document.getElementsByClassName('feed-back__input-email')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__input-email')[this.feedBackId];
 
         this.message =
-            document.getElementsByClassName('feed-back__message')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__message')[this.feedBackId];
 
         this.nameTip =
-            document.getElementsByClassName('feed-back__tip-name')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__tip-name')[this.feedBackId];
 
         this.nameTipTriangle =
-            document.getElementsByClassName('feed-back__tip_triangle-name')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__tip_triangle-name')[this.feedBackId];
 
         this.nameTipLabel =
-            document.getElementsByClassName('feed-back__label-name')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__label-name')[this.feedBackId];
 
         this.emailTip =
-            document.getElementsByClassName('feed-back__tip-email')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__tip-email')[this.feedBackId];
 
         this.emailTipTriangle =
-            document.getElementsByClassName('feed-back__tip_triangle-email')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__tip_triangle-email')[this.feedBackId];
 
         this.emailTipLabel =
-            document.getElementsByClassName('feed-back__label-email')[this.feedBackId];
+            document.getElementsByClassName(
+                'feed-back__label-email')[this.feedBackId];
 
         this.button =
-            document.getElementsByClassName('button-standard__extension-feedback')[this.feedBackId];
+            document.getElementsByClassName(
+                'button-standard__extension-feedback')[this.feedBackId];
     }
 
     setEmailValue(value) {

@@ -11,19 +11,24 @@ class VideoPlayer {
 
     initDOMElements() {
         this.video =
-            document.getElementsByClassName('video-player__source')[this.VideoPlayerId];
+            document.getElementsByClassName(
+                'video-player__source')[this.VideoPlayerId];
 
         this.duration =
-            document.getElementsByClassName('video-player__slider')[this.VideoPlayerId];
+            document.getElementsByClassName(
+                'video-player__slider')[this.VideoPlayerId];
 
         this.playPause =
-            document.getElementsByClassName('video-player__play')[this.VideoPlayerId];
+            document.getElementsByClassName(
+                'video-player__play')[this.VideoPlayerId];
 
         this.posterText =
-            document.getElementsByClassName('video-player__poster')[this.VideoPlayerId];
+            document.getElementsByClassName(
+                'video-player__poster')[this.VideoPlayerId];
 
         this.buttonFullScreen =
-            document.getElementsByClassName('video-player__fullscreen-video')[this.VideoPlayerId];
+            document.getElementsByClassName(
+                'video-player__fullscreen-video')[this.VideoPlayerId];
     }
 
     setDurationStartValue(durationValue) {
