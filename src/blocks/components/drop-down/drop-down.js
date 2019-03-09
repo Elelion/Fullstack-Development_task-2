@@ -2,6 +2,7 @@
 
 class DropBox {
     constructor() {
+
         /**
          * NOTE:
          * other method, part-1:
@@ -20,6 +21,7 @@ class DropBox {
 
     beginEvent() {
         this.getSelectors();
+
         /**
          * NOTE:
          * other method, part-2:

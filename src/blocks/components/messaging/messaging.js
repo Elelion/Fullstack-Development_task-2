@@ -41,45 +41,53 @@ class Messaging {
                 'button-standard__extension-messaging')[this.idMessaging];
     }
 
-    msgShowInput() {
+    setMsgShowInput(display, position) {
+        this.chatWindow.style.display = display;
+        this.chatBtn.style.backgroundPosition = position;
+    }
+
+    getMsgShowInput() {
         if (this.msgBtnStatus == false) {
-            this.chatWindow.style.display = 'block';
-            this.chatBtn.style.backgroundPosition = '-132px 8px';
+            this.setMsgShowInput('block', '-132px 8px');
             this.msgBtnStatus = true;
         } else {
-            this.chatWindow.style.display = 'none';
-            this.chatBtn.style.backgroundPosition = '6px 8px';
+            this.setMsgShowInput('none', '6px 8px');
             this.msgBtnStatus = false;
         }
 
         this.sendMsg.value = '';
     }
 
-    msgAdd() {
+    getCreateClearBlockMessage() {
+        let clear = document.createElement('div');
+        clear.className = 'messaging__clear';
+        return clear;
+    }
+
+    getCreateBlockMessage() {
+        let div = document.createElement('div');
+        div.className = 'messaging__send';
+        div.innerHTML = '<p class=messaging__letter>' + this.sendMsg.value + '</p>';
+        return div;
+    }
+
+    getMsgAdd() {
         if (this.msgBtnStatus == true && this.sendMsg.value != '') {
-            let clear = document.createElement('div');
-            clear.className = 'messaging__clear';
-
-            let div = document.createElement('div');
-            div.className = 'messaging__send';
-            div.innerHTML = '<p class=messaging__letter>' + this.sendMsg.value + '</p>';
-
-            this.parent.insertBefore(clear, this.parent.firstChild);
-            this.parent.insertBefore(div, this.parent.firstChild);
-
+            this.parent.insertBefore(this.getCreateClearBlockMessage(), this.parent.firstChild);
+            this.parent.insertBefore(this.getCreateBlockMessage(), this.parent.firstChild);
             this.sendMsg.value = '';
         }
     }
 
-    msgBtnOverMouse() {
+    getMsgBtnOverMouse() {
         if (this.msgBtnStatus == false) {
-            this.chatBtn.style.backgroundPosition = '-61px 8px';
+            this.setMsgShowInput('none', '-61px 8px');
         }
     }
 
     msgBtnLeaveMouse() {
         if (this.msgBtnStatus == false) {
-            this.chatBtn.style.backgroundPosition = '6px 8px';
+            this.setMsgShowInput('none', '6px 8px');
         }
     }
 
@@ -87,11 +95,11 @@ class Messaging {
         this.initDOMElements();
 
         this.chatBtn.onclick = () => {
-            this.msgShowInput();
+            this.getMsgShowInput();
         }
 
         this.chatBtn.onmouseover = () => {
-            this.msgBtnOverMouse();
+            this.getMsgBtnOverMouse();
         }
 
         this.chatBtn.onmouseleave = () => {
@@ -99,7 +107,7 @@ class Messaging {
         }
 
         this.buttonMsg.onclick = () => {
-            this.msgAdd();
+            this.getMsgAdd();
         }
     }
 }
