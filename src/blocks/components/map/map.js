@@ -1,48 +1,72 @@
 /* jshint esversion: 6 */
 
-//- FIXME: mapMarker - check the path, when importing the block to other projects
-const mapMarker = 'src/blocks/components/map/images/mapMarker.png';
+var initMap = function() {
+    //- FIXME: mapMarker - check the path, when importing the block to other projects
+    const MAP_MARKER = 'src/blocks/components/map/images/mapMarker.png';
+    let marker;
 
-function initMap() {
-    // var element = document.getElementById('map');
-    var element = document.getElementsByClassName('map')[0];
-    var marker;
+    let setElementMap = function(id) {
+        let idMap = id;
+        idMap = idMap.replace(/[^0-9]/g, "");
 
-    function addMarker(proporties) {
+        if (idMap.length === 0) {
+            idMap = 0;
+        } else {
+            idMap = idMap.substr(0, 1)
+        }
+
+        let elementMap = document.getElementsByClassName('map')[id];
+        return elementMap;
+    }
+
+    let getStartCoordinates = function() {
+        let startCoordinates = {
+            zoom: 15,
+
+            // NOTE: remove the standard control buttons
+            disableDefaultUI: true,
+
+            //NOTE: start map coordinates
+            center: { lat: 37.7945742, lng: -122.415077 }
+        };
+
+        return startCoordinates;
+    }
+
+    let getInfoWindow = function() {
+        var infoWindow = new google.maps.InfoWindow({
+            content: '<h1> Bingo...! </h1>'
+        });
+
+        return infoWindow;
+    }
+
+    let getMapLocation = function() {
+        let mapLocation = new google.maps.Map(setElementMap('0'), getStartCoordinates());
+
+        return mapLocation;
+    }
+
+    // ---
+
+    function addMap(proporties) {
         marker = new google.maps.Marker({
-            position: proporties.coordinates,
-            map: myMap,
-            icon: proporties.image
+            position: proporties.markerCoordinates,
+            map: proporties.mapCoordinates,
+            icon: proporties.markerImage
         });
     }
 
-
-    /**/
-
-    // координаты на которых наша карта загрузиться
-    var options = {
-        zoom: 15,
-        disableDefaultUI: true, // убираем стандартные кнопки управления
-        center: { lat: 37.7945742, lng: -122.415077 } // старт карты
-    };
-
-    // for output maps
-    var myMap = new google.maps.Map(element, options);
-
-    // создаем маркер с помощью ф-ции
-    addMarker({
-        coordinates: { lat: 37.7910742, lng: -122.415077 },
-        // image: 'src/images/mapMarker.png'
-        image: mapMarker
+    addMap({
+        markerCoordinates: { lat: 37.7910742, lng: -122.415077 },
+        mapCoordinates: getMapLocation(),
+        markerImage: MAP_MARKER
     });
 
-    var InfoWindow = new google.maps.InfoWindow({
-        content: '<h1> Bingo...! </h1>'
-    });
-
-    // делаем наш маркер слушателем
-    marker.addListener('click', function() {
-        // делаем окошко с информацией
-        InfoWindow.open(myMap, marker);
-    });
+    // NOTE: make the marker a listener
+    (function() {
+        marker.addListener('click', function() {
+            getInfoWindow().open(getMapLocation, marker);
+        });
+    }());
 }
