@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 
 var initMap = function() {
-    //- FIXME: mapMarker - check the path, when importing the block to other projects
+    // FIXME: mapMarker - check the path, when importing the block to other projects
     const MAP_MARKER = 'src/blocks/components/map/images/mapMarker.png';
     let marker;
 
@@ -26,7 +26,7 @@ var initMap = function() {
             // NOTE: remove the standard control buttons
             disableDefaultUI: true,
 
-            //NOTE: start map coordinates
+            // NOTE: start map coordinates
             center: { lat: 37.7945742, lng: -122.415077 }
         };
 
