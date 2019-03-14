@@ -12,11 +12,9 @@ class Messaging {
         this.idMessaging = id;
         this.idMessaging = this.idMessaging.replace(/[^0-9]/g, "");
 
-        if (this.idMessaging.length === 0) {
-            this.idMessaging = 0;
-        } else {
-            this.idMessaging = this.idMessaging.substr(0, 1)
-        }
+        this.idMessaging = this.idMessaging.length === 0
+            ? 0
+            : this.idMessaging.substr(0, 1);
     }
 
     initDOMElements() {

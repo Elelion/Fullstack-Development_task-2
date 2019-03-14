@@ -58,11 +58,26 @@ class ClassicSlider {
     beginEvent() {
         this.initDOMElements();
         this.sliderTrack.value = 0;
-        this.sliderTrack.onclick = () => { this.positionTrackBar(); };
-        this.sliderTrack.mouseenter = () => { this.positionTrackBar(); };
-        this.sliderTrack.onmousemove = () => { this.positionTrackBar(); };
-        this.sliderTrack.mousedown = () => { this.positionTrackBar(); };
-        this.sliderTrack.mouseup = () => { this.positionTrackBar(); };
+
+        this.sliderTrack.onclick = () => {
+            this.positionTrackBar();
+        };
+
+        this.sliderTrack.mouseenter = () => {
+            this.positionTrackBar();
+        };
+
+        this.sliderTrack.onmousemove = () => {
+            this.positionTrackBar();
+        };
+
+        this.sliderTrack.mousedown = () => {
+            this.positionTrackBar();
+        };
+
+        this.sliderTrack.mouseup = () => {
+            this.positionTrackBar();
+        };
     }
 }
 

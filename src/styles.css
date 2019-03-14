@@ -615,7 +615,7 @@ circle:nth-child(2n) {
             margin-left: 1.5rem; } }
       .step-slider__dial_sets-pitch:nth-child(2) {
         width: 3.5rem;
-        margin-right: 11rem; }
+        margin-right: 13rem; }
         @media screen and (max-width: 820px) {
           .step-slider__dial_sets-pitch:nth-child(2) {
             margin-right: 5.5rem; } }

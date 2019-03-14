@@ -10,11 +10,9 @@ class FeedBack {
         this.feedBackId = id;
         this.feedBackId = this.feedBackId.replace(/[^0-9]/g, "");
 
-        if (this.feedBackId.length === 0) {
-            this.feedBackId = 0;
-        } else {
-            this.feedBackId = this.feedBackId.substr(0, 1)
-        }
+        this.feedBackId = this.feedBackId.length === 0
+            ? 0
+            : this.feedBackId.substr(0, 1);
     }
 
     initDOMElements() {

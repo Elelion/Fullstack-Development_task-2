@@ -12,19 +12,11 @@ class UserProfile {
     }
 
     setColorOver(color) {
-        if (/#\w\w\w\w\w\w/.test(color)) {
-            this.colorOver = color;
-        } else {
-            this.colorOver = '#4EB7A8';
-        }
+        this.colorOver = /#\w\w\w\w\w\w/.test(color) ? color : '#4EB7A8';
     }
 
     setColorLeave(color) {
-        if (/#\w\w\w\w\w\w/.test(color)) {
-            this.colorLeave = color;
-        } else {
-            this.colorLeave = '#E5E5E5';
-        }
+        this.colorLeave = /#\w\w\w\w\w\w/.test(color) ? color : '#E5E5E5';
     }
 
     setEvent(eventName, eventMethod) {

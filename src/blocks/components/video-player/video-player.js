@@ -3,7 +3,7 @@
 class VideoPlayer {
     constructor(id) {
         this.startDuration;
-        this.VideoPlayerId = id;
+        this.videoPlayerId = id;
 
         this.beginEvent();
         this.getVideoDuration = this.getVideoDuration.bind(this);
@@ -12,23 +12,23 @@ class VideoPlayer {
     initDOMElements() {
         this.video =
             document.getElementsByClassName(
-                'video-player__source')[this.VideoPlayerId];
+                'video-player__source')[this.videoPlayerId];
 
         this.duration =
             document.getElementsByClassName(
-                'video-player__slider')[this.VideoPlayerId];
+                'video-player__slider')[this.videoPlayerId];
 
         this.playPause =
             document.getElementsByClassName(
-                'video-player__play')[this.VideoPlayerId];
+                'video-player__play')[this.videoPlayerId];
 
         this.posterText =
             document.getElementsByClassName(
-                'video-player__poster')[this.VideoPlayerId];
+                'video-player__poster')[this.videoPlayerId];
 
         this.buttonFullScreen =
             document.getElementsByClassName(
-                'video-player__fullscreen-video')[this.VideoPlayerId];
+                'video-player__fullscreen-video')[this.videoPlayerId];
     }
 
     setDurationStartValue(durationValue) {
