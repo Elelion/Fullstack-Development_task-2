@@ -6,7 +6,7 @@ class UserProfile {
         this.beginEvent(colorOver, colorLeave);
     }
 
-    setSelectors() {
+    initDOMElements() {
         this.userInfo = this.selector.querySelector('.user-profile__info');
         this.userPhoto = this.selector.querySelector('.user-profile__photo');
     }
@@ -28,7 +28,7 @@ class UserProfile {
     }
 
     beginEvent(colorOver, colorLeave) {
-        this.setSelectors();
+        this.initDOMElements();
         this.setColorOver(colorOver);
         this.setColorLeave(colorLeave);
         this.setEvent('mouseover', this.colorOver);
