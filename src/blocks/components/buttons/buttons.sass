@@ -186,8 +186,6 @@ $path: './blocks/components/buttons/images/arrows.png'
 			&-right:active
 				background-position: -731px -7px
 
-// TODO: fix ripple for standard and ripple for arrow
-
 /* NOTE: ripple effect, look in ripple.js */
 .ripple_standard
 	position: absolute
@@ -200,6 +198,21 @@ $path: './blocks/components/buttons/images/arrows.png'
 	animation: ripple_standard 0.4s linear
 
 @keyframes ripple_standard
+	100%
+		transform: scale(2)
+		opacity: 0
+
+.ripple_arrow
+	position: absolute
+	width: 0
+	height: 0
+	border-radius: 50%
+	background: rgba(78,183,168,0.4)
+	transform: scale(0)
+	opacity: 1
+	animation: ripple_standard 0.4s linear
+
+@keyframes ripple_arrow
 	100%
 		transform: scale(2)
 		opacity: 0

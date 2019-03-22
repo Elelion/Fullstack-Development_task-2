@@ -1,28 +1,21 @@
 /*jshint esversion: 6 */
 
 class Ripple {
-    constructor(id) {
+    constructor(buttonName, rippleName) {
         this.xPos = 0;
         this.yPos = 0;
-        this.rippleTarget = 'ripple_standard';
+        this.rippleName = rippleName;
+        this.buttonName = buttonName;
 
-        this.initId(id);
         this.beginEvent();
     }
 
-    initId(id) {
-        this.rippleId = id;
-        this.rippleId = this.rippleId.replace(/[^0-9]/g, "");
-
-        this.rippleId = this.rippleId.length === 0
-            ? 0
-            : this.rippleId.substr(0, 1);
-    }
+    //'ripple_standard'; //.ripple_arrow
+    // , .button-arrow + button-standard
 
     initDOMElements() {
-        // , .button-arrow
         this.span = document.createElement('span');
-        this.buttons = document.querySelectorAll('.button-standard');
+        this.buttons = document.querySelectorAll('.' + this.buttonName);
     }
 
     getRippleEffect() {
@@ -37,7 +30,7 @@ class Ripple {
                 let rippleEffect = this.span.style;
 
                 // NOTE: make it round. Effect stayed on the borders button
-                function rippleFrame() {
+                const rippleFrame = () => {
                     if (rippleWidth >= rippleHeight) {
                         rippleHeight = rippleWidth;
                     } else {
@@ -45,6 +38,7 @@ class Ripple {
                     }
                 }
 
+                // TODO: thing about this...
                 // const rippleDefineCoordinates = () => {
                 //     let targetCoorinates = event.target.getBoundingClientRect();
                 //     let xCoordinate = event.clientX - targetCoorinates.left;
@@ -55,21 +49,13 @@ class Ripple {
                 //     console.log('xPos: ' + this.xPos + ' | yPos: ' + this.yPos);
                 // }
 
-                // NOTE: get the center of the element, for current coordinates
+                // NOTE: get the center of the cursor event click, for current coordinates
                 const rippleDefineHorizonralCoordinates = () => {
                     this.xPos = event.layerX -  rippleWidth / 2;
-                    // this.xPos = event.offsetX === undefined
-                    //     ? event.layerX
-                    //     : event.offsetX - rippleWidth / 2;
                 }
 
                 const rippleDefineVerticalCoordinates = () => {
                     this.yPos = event.layerY - rippleHeight / 2;
-                    // this.yPos = event.offsetY === undefined
-                    //     ? event.layerY
-                    //     : event.offsetY - rippleHeight / 2;
-
-                    console.log('POS (y | x): ' + this.yPos + ' | ' + this.xPos);
                 }
 
                 // NOTE:
@@ -83,7 +69,7 @@ class Ripple {
                 }
 
                 const rippleApplyCssEffect = () => {
-                    this.span.className = this.rippleTarget;
+                    this.span.className = this.rippleName;
                 }
 
                 rippleFrame();
@@ -92,6 +78,8 @@ class Ripple {
                 rippleBeginEffect();
                 rippleApplyCssEffect();
                 this.buttons[i].appendChild(this.span);
+
+                console.log('POS (y | x): ' + this.yPos + ' | ' + this.xPos);
             });
         }
     }
@@ -102,7 +90,8 @@ class Ripple {
     }
 }
 
-new Ripple('0');
+new Ripple('button-standard', 'ripple_standard');
+new Ripple('button-arrow', 'ripple_arrow');
 
 // ---
 
